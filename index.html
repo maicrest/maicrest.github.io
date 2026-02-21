@@ -7,22 +7,22 @@
     <title>MAICREST Mobile Apps - Portfolio & Privacy</title>
     <style>
         :root {
-            color-scheme: dark;
-            --bg: #0b0d12;
-            --surface: #141826;
-            --surface-2: #101420;
-            --text: #f1f4fb;
-            --text-soft: #cbd3e2;
-            --muted: #98a3b8;
-            --line: rgba(255, 255, 255, 0.08);
-            --accent: #6aa6ff;
-            --accent-strong: #4c82ff;
-            --accent-soft: rgba(106, 166, 255, 0.16);
+            color-scheme: light;
+            --bg: #f0f4f8;
+            --surface: #f6f8fb;
+            --surface-2: #f0f4f8;
+            --text: #191c20;
+            --text-soft: #191c20;
+            --muted: #191c20;
+            --line: rgba(25, 28, 32, 0.2);
+            --accent: #191c20;
+            --accent-strong: #191c20;
+            --accent-soft: rgba(25, 28, 32, 0.08);
             --radius-lg: 22px;
             --radius-md: 16px;
             --radius-sm: 12px;
-            --shadow-1: 0 18px 40px rgba(0, 0, 0, 0.35);
-            --shadow-2: 0 10px 24px rgba(0, 0, 0, 0.25);
+            --shadow-1: 0 14px 24px rgba(25, 28, 32, 0.08);
+            --shadow-2: 0 8px 16px rgba(25, 28, 32, 0.06);
         }
 
         * {
@@ -34,9 +34,7 @@
         body {
             font-family: "Avenir Next", "Century Gothic", "Trebuchet MS", sans-serif;
             color: var(--text);
-            background: radial-gradient(circle at 15% 0%, rgba(76, 130, 255, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 15%, rgba(106, 166, 255, 0.12) 0%, transparent 42%),
-                linear-gradient(180deg, #0b0d12 0%, #0f1420 55%, #0b0d12 100%);
+            background: var(--bg);
             line-height: 1.7;
         }
 
@@ -68,12 +66,12 @@
 
         .hero {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: 1fr;
             gap: 40px;
             align-items: center;
             padding: 46px 46px 60px;
             border-radius: var(--radius-lg);
-            background: linear-gradient(140deg, rgba(20, 24, 38, 0.96), rgba(12, 15, 26, 0.96));
+            background: var(--surface);
             box-shadow: var(--shadow-1);
             border: 1px solid var(--line);
             position: relative;
@@ -84,7 +82,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 80% 10%, rgba(106, 166, 255, 0.18), transparent 46%);
+            background: linear-gradient(135deg, rgba(25, 28, 32, 0.03), transparent 60%);
             pointer-events: none;
         }
 
@@ -126,8 +124,8 @@
 
         .btn.primary {
             background: var(--accent-strong);
-            color: #fff;
-            box-shadow: 0 12px 24px rgba(76, 130, 255, 0.35);
+            color: #f0f4f8;
+            box-shadow: 0 10px 18px rgba(25, 28, 32, 0.15);
         }
 
         .btn.ghost {
@@ -138,7 +136,7 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(12, 18, 27, 0.18);
+            box-shadow: 0 10px 20px rgba(25, 28, 32, 0.12);
         }
 
         .hero-meta {
@@ -164,58 +162,7 @@
         }
 
         .hero-visual {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .device-frame {
-            width: min(360px, 100%);
-            background: #0f131f;
-            border-radius: 36px;
-            padding: 18px;
-            box-shadow: 0 30px 55px rgba(12, 18, 27, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .device-screen {
-            height: 420px;
-            background: linear-gradient(180deg, #151c2c 0%, #0b0f1d 100%);
-            border-radius: 28px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: #f4f7ff;
-        }
-
-        .placeholder-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 14px;
-            padding: 14px 16px;
-            font-size: 0.85rem;
-        }
-
-        .placeholder-lines {
-            display: grid;
-            gap: 10px;
-        }
-
-        .placeholder-lines span {
-            display: block;
-            height: 10px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .placeholder-lines span:nth-child(2) {
-            width: 70%;
-        }
-
-        .placeholder-lines span:nth-child(3) {
-            width: 55%;
+            display: none;
         }
 
         .section {
@@ -245,8 +192,7 @@
         }
 
         .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            display: flex;
             gap: 22px;
         }
 
@@ -259,23 +205,12 @@
             display: grid;
             gap: 16px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: min(360px, 100%);
         }
 
         .app-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-1);
-        }
-
-        .app-media {
-            height: 160px;
-            border-radius: var(--radius-sm);
-            background: linear-gradient(135deg, rgba(106, 166, 255, 0.18), rgba(106, 166, 255, 0.06));
-            border: 1px dashed rgba(106, 166, 255, 0.4);
-            display: grid;
-            place-items: center;
-            color: var(--text-soft);
-            font-weight: 600;
-            font-size: 0.9rem;
         }
 
         .app-title {
@@ -324,7 +259,7 @@
         }
 
         .contact-card p {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(25, 28, 32, 0.85);
         }
 
         footer {
@@ -387,6 +322,14 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+
+            .apps-grid {
+                display: block;
+            }
+
+            .app-card {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -395,7 +338,7 @@
         <header class="hero reveal">
             <div class="hero-content">
                 <p class="eyebrow">MAICREST STUDIO</p>
-                <h1>Designing mobile apps with clear purpose and trusted privacy.</h1>
+                <h1>Enhancing Software Experience</h1>
                 <p>
                     I am a software designer with a passion to create beneficial products for the societies.
                     This space highlights my mobile apps and keeps their privacy policies easy to find.
@@ -404,32 +347,7 @@
                     <a class="btn primary" href="#apps">Explore Apps</a>
                     <a class="btn ghost" href="#contact">Contact Me</a>
                 </div>
-                <div class="hero-meta">
-                    <div class="meta-card">
-                        Privacy-first
-                        <span>Clear policies for every app.</span>
-                    </div>
-                    <div class="meta-card">
-                        Purpose-driven
-                        <span>Tools that improve daily health outcomes.</span>
-                    </div>
-                    <div class="meta-card">
-                        Human-centered
-                        <span>Simple workflows with calm design.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="device-frame">
-                    <div class="device-screen">
-                        <div class="placeholder-badge">App preview placeholder</div>
-                        <div class="placeholder-lines">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </header>
 
@@ -439,11 +357,9 @@
                     <p class="eyebrow">Portfolio</p>
                     <h2>Mobile Applications</h2>
                 </div>
-                <p>Explore each application and open its privacy policy from a single place.</p>
             </div>
             <div class="apps-grid">
                 <article class="app-card">
-                    <div class="app-media">Image placeholder</div>
                     <div>
                         <div class="app-title">WarfarinWisely</div>
                         <p class="app-desc">
@@ -451,9 +367,11 @@
                         </p>
                     </div>
                     <div class="app-tags">
-                        <span>Healthcare</span>
-                        <span>Daily Tracking</span>
-                        <span>Privacy Policy</span>
+                        <span>Dose Calculator</span>
+                        <span>Dose Tracker</span>
+                        <span>CDS</span>
+                        <span>Android</span>
+                        <span>iOS</span>
                     </div>
                     <a class="app-link" href="warfarinwisely.html">View Privacy Policy &rarr;</a>
                 </article>
@@ -471,7 +389,7 @@
         </section>
 
         <footer>
-            <p>&copy; 2026 MAICREST Mobile Apps. All rights reserved.</p>
+            <p>© 2026 MAICREST. All rights reserved.</p>
             <p>Last updated: February 2026</p>
         </footer>
     </div>
