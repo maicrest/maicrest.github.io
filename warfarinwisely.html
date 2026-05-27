@@ -1,440 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WarfarinWisely - Clinical Decision Support tool for healthcare professionals managing warfarin therapy">
-    <title>WarfarinWisely - Healthcare Professional CDS Tool</title>
-    <style>
-        :root {
-            color-scheme: light;
-            --bg: #f0f4f8;
-            --surface: #f6f8fb;
-            --surface-2: #f0f4f8;
-            --text: #191c20;
-            --text-soft: #191c20;
-            --muted: #191c20;
-            --line: rgba(25, 28, 32, 0.2);
-            --accent: #191c20;
-            --accent-strong: #191c20;
-            --shadow-1: 0 14px 24px rgba(25, 28, 32, 0.08);
-            --shadow-2: 0 8px 16px rgba(25, 28, 32, 0.06);
-            --radius-lg: 20px;
-            --radius-md: 16px;
-            --radius-sm: 12px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Avenir Next", "Century Gothic", "Trebuchet MS", sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--bg);
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: var(--accent-strong);
-        }
-
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 28px 20px 50px;
-        }
-
-        header {
-            background: var(--surface);
-            color: var(--text);
-            padding: 36px 28px;
-            text-align: center;
-            border-radius: var(--radius-lg);
-            margin-bottom: 30px;
-            border: 1px solid var(--line);
-            box-shadow: var(--shadow-1);
-        }
-
-        .header-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .header-brand img {
-            width: 40px;
-            height: 40px;
-            display: block;
-        }
-
-        header h1 {
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            margin-bottom: 0;
-            font-weight: 600;
-        }
-
-        header p {
-            font-size: 1rem;
-            color: var(--text-soft);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            color: var(--text-soft);
-            font-weight: 500;
-        }
-
-        .back-link::before {
-            content: "←";
-            font-size: 1.1rem;
-        }
-
-        .content-section {
-            background: var(--surface);
-            padding: 36px 34px;
-            border-radius: var(--radius-lg);
-            margin-bottom: 30px;
-            border: 1px solid var(--line);
-            box-shadow: var(--shadow-2);
-        }
-
-        .content-section h2 {
-            color: var(--text);
-            margin-bottom: 20px;
-            font-size: 1.6rem;
-            border-bottom: 1px solid var(--line);
-            padding-bottom: 12px;
-        }
-
-        .content-section h3 {
-            color: var(--text-soft);
-            margin-top: 26px;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-        }
-
-        .content-section p {
-            color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 14px;
-        }
-
-        .content-section ul {
-            margin-left: 22px;
-            margin-bottom: 14px;
-        }
-
-        .content-section ul li {
-            color: var(--muted);
-            margin-bottom: 8px;
-            line-height: 1.7;
-        }
-
-        .highlight-box {
-            background-color: var(--surface-2);
-            border-left: 3px solid var(--accent);
-            padding: 18px 20px;
-            margin: 20px 0;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--line);
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 18px 16px 40px;
-            }
-
-            .content-section {
-                padding: 24px 22px;
-            }
-        }
-    </style>
+    <meta name="description" content="WarfarinWisely clinical decision support info, medical disclosures, and privacy policies. Fully transparent, local-first documentation.">
+    <title>WarfarinWisely - Info & Privacy Policy</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        // Inline script to prevent theme flash
+        (function() {
+            const storedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
+
+    <!-- Floating Navigation Bar -->
     <div class="container">
-        <a href="index.html" class="back-link">Back to Home</a>
-        
-        <header>
-            <div class="header-brand">
-                <img src="warfarin-icon-round.png" alt="WarfarinWisely icon">
-                <h1>WarfarinWisely</h1>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
+                    <span class="nav-brand-logo">
+                        <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
+                            <path d="M10,90 L10,10 L35,45 L50,25 L65,45 L90,10 L90,90 L75,90 L75,35 L50,70 L25,35 L25,90 Z" />
+                        </svg>
+                    </span>
+                    <span class="nav-brand-text">MAICREST</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#apps" class="nav-link">Apps</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <p>Professional Clinical Decision Support Tool | Healthcare Professional Use Only</p>
-        </header>
-        
-        <section class="content-section">
-            <h2>1. About This App</h2>
-            <h3>⚠️ HEALTHCARE PROFESSIONALS ONLY</h3>
-            <p>This application is strictly designed for use by licensed healthcare professionals (pharmacists, physicians, nurses, anticoagulation specialists). <strong>Patients must not use this app for self-management or self-dosing.</strong></p>
-            
-            <h3>What is WarfarinWisely?</h3>
-            <p>WarfarinWisely is a <strong>Clinical Decision Support (CDS) tool</strong> designed to assist licensed healthcare professionals in calculating modified weekly warfarin doses based on INR (International Normalized Ratio) test results. The app simplifies a well-documented pharmaceutical calculation using validated guidelines from the <strong>Pharmaceutical Services Programme, Ministry of Health Malaysia</strong> (Anticoagulant Quick Guide, 1st Edition).</p>
-            
-            <p>This tool is NOT a medical device, NOT medical advice, and NOT a substitute for professional clinical judgment. Healthcare professionals must independently verify all calculated results before clinical application.</p>
-            
-            <h3>Calculation Methods</h3>
-            <p>The app offers three evidence-based adjustment methods for calculating modified warfarin doses:</p>
-            <ul>
-                <li><strong>Method A (ICSI Guideline):</strong> Percentage-based adjustment (wadj = 15 × INR difference %)</li>
-                <li><strong>Method B (KKM Guideline):</strong> Alternative percentage-based adjustment (wadj = 10 × INR difference %)</li>
-                <li><strong>Method C (Manual/Custom):</strong> Custom adjustment defined by the healthcare professional (-15% to +15%)</li>
-            </ul>
-            <p>Modified dose is calculated as: mcurD = curD × (100% ± wadj) and mapped to validated daily dose schedules.</p>
-            
-            <h3>Key Features</h3>
-            <ul>
-                <li><strong>Real-time Dose Calculation:</strong> Calculates modified weekly warfarin doses based on INR test results</li>
-                <li><strong>Input Validation:</strong> Validates dose range (3.0–102.0 mg weekly) and INR range (0.1–10.0)</li>
-                <li><strong>Multiple Daily Schedules:</strong> Generates complete 7-day dose schedules for calculated weekly doses</li>
-                <li><strong>PDF Reports:</strong> Export calculation results with timestamp and optional clinician signature for medical records</li>
-                <li><strong>Secure Sharing:</strong> Share results to messaging apps for healthcare provider collaboration</li>
-                <li><strong>Dark Mode & Haptic Feedback:</strong> Accessibility features for clinical workflows</li>
-                <li><strong>Offline Operation:</strong> Works completely offline—no internet required, no data collection</li>
-            </ul>
-            
-            <h3>Who Should Use This App?</h3>
-            <p>This application is intended exclusively for:</p>
-            <ul>
-                <li><strong>Pharmacists</strong> managing anticoagulation therapy</li>
-                <li><strong>Physicians/Doctors</strong> prescribing warfarin dosing adjustments</li>
-                <li><strong>Nurses</strong> with clinical authority in anticoagulation management</li>
-                <li><strong>Anticoagulation Specialists</strong> and other licensed healthcare professionals</li>
-            </ul>
-            <p><strong>This app is NOT for patient use.</strong> Patients must not use this tool for self-management of warfarin therapy.</p>
-        </section>
-        
-        <section class="content-section">
-            <h2>2. Medical Disclaimer</h2>
-            <h3>⚠️ IMPORTANT MEDICAL DISCLAIMER</h3>
-            <p>This WarfarinWisely application is intended as a <strong>Clinical Decision Support (CDS) tool for healthcare professionals only</strong>. By accessing and using this application, you acknowledge and agree to the following:</p>
-            
-            <h3>What This App IS</h3>
-            <ul>
-                <li>A calculation tool to assist healthcare professionals in modifying warfarin weekly doses based on INR results</li>
-                <li>Based on validated pharmaceutical guidelines from the Malaysian Ministry of Health (Anticoagulant Quick Guide, 1st Edition)</li>
-                <li>A resource for supporting—not replacing—professional clinical judgment and expertise</li>
-            </ul>
-            
-            <h3>What This App IS NOT</h3>
-            <ul>
-                <li><strong>Not a medical device:</strong> This app is not classified, registered, approved, or certified as a medical device in any jurisdiction</li>
-                <li><strong>Not medical advice:</strong> This app does not provide medical advice, diagnosis, or treatment recommendations</li>
-                <li><strong>Not a substitute for professional judgment:</strong> Healthcare professionals must independently verify and validate all calculated results before clinical application</li>
-                <li><strong>Not for patient self-management:</strong> Patients must not use this app. Use by patients for self-adjusting anticoagulation therapy is explicitly prohibited</li>
-                <li><strong>Not a replacement for clinical assessment:</strong> Professional assessment of the patient's clinical status, laboratory values, and medical history remains essential</li>
-                <li><strong>Not a guarantee of safety or efficacy:</strong> Calculated doses are suggestions for professional consideration only; all clinical decisions remain the responsibility of the healthcare professional</li>
-            </ul>
-            
-            <h3>Professional Responsibility</h3>
-            <ul>
-                <li>Healthcare professionals using this app remain fully responsible for all clinical decisions made</li>
-                <li>All calculated doses must be independently verified before prescription or administration</li>
-                <li>Healthcare professionals must consider the patient's complete clinical picture (comorbidities, drug interactions, bleeding risk, clinical status)</li>
-                <li>Laboratory monitoring must continue as per established anticoagulation protocols</li>
-                <li>This app does not replace institutional anticoagulation guidelines, protocols, or standards of care</li>
-            </ul>
-            
-            <h3>Liability Disclaimer</h3>
-            <p><strong>The developer of this application assumes no liability for:</strong></p>
-            <ul>
-                <li>Any adverse outcomes, complications, or harm resulting from use or misuse of the calculated results</li>
-                <li>Errors or inaccuracies in calculations</li>
-                <li>Injuries or damages to patients or third parties</li>
-                <li>Any claims arising from clinical decisions made based on outputs from this app</li>
-                <li>Regulatory, legal, or compliance issues arising from application use</li>
-            </ul>
-            <p><strong>By using this application, you acknowledge that you hold full clinical responsibility for all outcomes.</strong></p>
-            
-            <h3>Regulatory Status</h3>
-            <p>This application is <strong>not classified as a certified medical device</strong> under FDA (USA), TGA (Australia), CE (EU), or other regulatory frameworks. It is positioned as software for clinical decision support only—to assist, not to replace, professional medical judgment.</p>
-            
-            <h3>No Warranty</h3>
-            <p>This application is provided "as-is" without warranty of any kind, express or implied, including warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
-            
-            <h3>Verification Requirement</h3>
-            <p>Healthcare professionals are required to verify all calculated results independently using established clinical protocols and pharmaceutical references before implementation in any clinical setting.</p>
-        </section>
-        
-        <section class="content-section">
-            <h2>3. Privacy Policy</h2>
-            
-            <p><strong>Last Updated:</strong> February 2026</p>
-            
-            <h3>TL;DR: What We Don't Do</h3>
-            <div class="highlight-box">
-                <ul style="margin-bottom: 0;">
-                    <li>❌ We don't collect patient data</li>
-                    <li>❌ We don't track usage or analytics</li>
-                    <li>❌ We don't send your calculations to external servers</li>
-                    <li>❌ We don't require an account, login, or email</li>
-                    <li>❌ We don't use advertising or third-party trackers</li>
-                    <li>❌ We don't store calculation history</li>
-                    <li>✅ We work <strong>entirely offline</strong></li>
-                </ul>
-            </div>
-            
-            <h3>Data We Do NOT Collect</h3>
-            <p><strong>Patient Information:</strong> The app stores zero patient data. You provide input values (INR, current dose) temporarily for calculation, but these are <strong>not saved, logged, or transmitted anywhere</strong>.</p>
-            <p><strong>Usage Analytics:</strong> We do not track how often you use the app, which features you access, or how long sessions last. No analytics libraries are included.</p>
-            <p><strong>Crash Reports:</strong> We do not collect automated crash reports or error logging.</p>
-            <p><strong>Location/Identifiers:</strong> We do not access your location, device identifiers, or other personal information.</p>
-            <p><strong>Medical History:</strong> The app doesn't store or transmit any patient medical information.</p>
-            
-            <h3>Data We DO Store Locally (On Your Device Only)</h3>
-            <p>The app stores <strong>only these user preferences</strong> locally on your device using Android SharedPreferences / iOS Keychain:</p>
-            <ul>
-                <li><strong>Haptic Feedback Toggle</strong> — Whether vibration feedback is enabled (default: on)</li>
-                <li><strong>Dark Mode Toggle</strong> — Whether dark theme is enabled (default: off)</li>
-                <li><strong>Signature Text</strong> — Optional text you enter for PDF report signatures (defaults to empty)</li>
-            </ul>
-            <p><strong>These preferences are stored only on your device.</strong> They are never sent to any server. Uninstalling the app deletes all stored data immediately.</p>
-            
-            <h3>Calculation Data</h3>
-            <p>All dose calculations happen <strong>entirely on your device</strong>. Calculations are not:</p>
-            <ul>
-                <li>Saved to device storage</li>
-                <li>Sent to any server</li>
-                <li>Logged or tracked</li>
-                <li>Shared with third parties</li>
-                <li>Used for any purpose beyond your immediate use</li>
-            </ul>
-            <p>Once you navigate away from the calculation screen, the data is discarded from memory.</p>
-            
-            <h3>Offline Operation</h3>
-            <p>This app requires <strong>no internet connection</strong> to use. All calculations run locally on your device.</p>
-            
-            <h3>Third-Party Integrations</h3>
-            <p>When you choose to <strong>share a result</strong> using the "Share PDF" or "Share Text" buttons, the PDF or text is passed to your device's native sharing interface (email, WhatsApp, Signal, etc.). The app does not:</p>
-            <ul>
-                <li>Send data to any third party</li>
-                <li>Control where you share the result</li>
-                <li>Retain a copy of shared data</li>
-                <li>Track what happens after sharing</li>
-            </ul>
-            <p><strong>You control where results are shared.</strong></p>
-            
-            <h3>Device Permissions</h3>
-            <p>Depending on your device, the app may request:</p>
-            <ul>
-                <li><strong>File Storage Permission</strong> — To save and share PDF reports</li>
-                <li><strong>Vibration Permission</strong> — For haptic feedback (optional)</li>
-            </ul>
-            <p>The app does NOT request:</p>
-            <ul>
-                <li>Location access</li>
-                <li>Contacts or calendar access</li>
-                <li>Microphone or camera access</li>
-                <li>Call/SMS permissions</li>
-                <li>Photo library access (beyond PDF export)</li>
-            </ul>
-            
-            <h3>Data Retention & Deletion</h3>
-            <ul>
-                <li><strong>Calculation Data:</strong> Not retained. Deleted immediately after session.</li>
-                <li><strong>User Preferences:</strong> Stored locally indefinitely until you uninstall or manually clear app data</li>
-                <li><strong>Uninstall:</strong> Deletes all app data from your device. No data exists on company servers to request deletion from.</li>
-            </ul>
-            <p><strong>To delete all data:</strong></p>
-            <ul>
-                <li>iOS: Settings → General → iPhone Storage → WarfarinWisely → Offload App (keeps data) or Delete App</li>
-                <li>Android: Settings → Apps → WarfarinWisely → Uninstall</li>
-            </ul>
-            
-            <h3>Your Rights</h3>
-            <p>Because we don't collect personal data:</p>
-            <ul>
-                <li>You have no data access to request (we don't have any)</li>
-                <li>You have no data portability rights (no data to export)</li>
-                <li>You have no deletion requests to submit (data is local to your device only)</li>
-            </ul>
-            <p>If you wish to delete all stored data, simply uninstall the app.</p>
-            
-            <h3>Children's Privacy</h3>
-            <p>This app is not intended for children. It is designed for licensed healthcare professionals only. We do not knowingly collect data from children.</p>
-            
-            <h3>Privacy Policy Changes</h3>
-            <p>If this policy changes, we will post the updated version in the app and on <a href="https://maicrest.github.io" target="_blank">maicrest.github.io</a>. Continued use of the app means you accept any changes.</p>
-            
-            <h3>Questions?</h3>
-            <p>For questions about this Privacy Policy, contact the app developer through the app store listing or visit <a href="https://maicrest.github.io" target="_blank">maicrest.github.io</a>.</p>
-        </section>
-        
-        <section class="content-section">
-            <h2>4. Regulatory Positioning</h2>
-            <h3>Why This Is NOT a Medical Device</h3>
-            <p>This app is positioned as <strong>Clinical Decision Support (CDS) software</strong>, not a medical device. Understanding this distinction is important for healthcare professionals and regulators.</p>
-            
-            <h3>Why This App Is NOT a Medical Device</h3>
-            <ul>
-                <li><strong>No Diagnosis:</strong> The app does not diagnose any medical condition. You, the healthcare professional, provide the diagnosis and INR value.</li>
-                <li><strong>No Treatment Recommendation:</strong> The app calculates a dose; it does not recommend starting, stopping, or treating any condition. The healthcare professional determines whether to apply the result.</li>
-                <li><strong>No Patient-Directed Advice:</strong> The app is not intended for patients. Results are reviewed and interpreted by the healthcare professional, who bears full clinical responsibility.</li>
-                <li><strong>Supported Decision, Not Autonomous Decision:</strong> The app assists an existing clinical workflow (verification of dose calculations) but does not make autonomous clinical decisions or automatically adjust therapy.</li>
-                <li><strong>Calculation Tool, Not Advisory System:</strong> The app performs a mathematical calculation based on published pharmaceutical tables. Similar to a paper dosing chart or calculator—not an autonomous clinical decision system.</li>
-                <li><strong>Professional-Dependent:</strong> Requires a licensed healthcare professional with clinical authority to interpret and implement results. A patient using this app would violate policy, not follow recommendations.</li>
-            </ul>
-            
-            <h3>Regulatory Status by Jurisdiction</h3>
-            <ul>
-                <li>🇺🇸 <strong>USA (FDA):</strong> Not classified as a medical device; exempted CDS software when used by licensed professionals with verification</li>
-                <li>🇬🇧 <strong>UK (MHRA):</strong> Similar—CDS tools used by professionals not subject to device regulations</li>
-                <li>🇪🇺 <strong>EU (CE):</strong> Not classified as a medical device under MDR; software for professional use by licensed HCPs</li>
-                <li>🇦🇺 <strong>Australia (TGA):</strong> Not classified as a medical device; CDS software guidance applies</li>
-                <li>🇲🇾 <strong>Malaysia (MOH/NPRA):</strong> Not registered as a pharmaceutical device; reference materials for professional use</li>
-            </ul>
-            <p><strong>None of these jurisdictions consider this app a regulated medical device.</strong></p>
-            
-            <h3>Evidence Base</h3>
-            <p>The calculation is based on:</p>
-            <ul>
-                <li>Pharmaceutical Services Programme, Ministry of Health Malaysia — <strong>Anticoagulant Quick Guide (1st Edition)</strong></li>
-                <li>Peer-reviewed clinical literature supporting ICSI and KKM dosing methods</li>
-                <li>Validated warfarin dosing tables used in clinical practice</li>
-            </ul>
-            <p>This is not proprietary AI or machine learning; it is a transparent, published pharmaceutical calculation.</p>
-            
-            <h3>Healthcare Professional Responsibility</h3>
-            <p>Using this CDS tool does <strong>not shift clinical responsibility</strong> from the healthcare professional to the software:</p>
-            <ul>
-                <li>Healthcare professionals remain responsible for all clinical decisions</li>
-                <li>Professional judgment, clinical expertise, and institutional protocols take precedence</li>
-                <li>Results must be independently verified against patient's clinical context</li>
-                <li>The healthcare professional, not the app, is accountable to the patient and regulator</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <p><strong>Key Statement:</strong> "This application is a Clinical Decision Support tool intended to assist healthcare professionals in calculating modified warfarin doses using validated pharmaceutical guidelines. It is NOT a medical device, NOT a substitute for professional judgment, and NOT intended for patient use. Healthcare professionals using this tool remain fully responsible for all clinical decisions and patient outcomes."</p>
-        </section>
-        
-        <footer>
-            <p><a href="index.html">← Back to Home</a></p>
-            <p>© 2026 MAICREST. All right reserved. WarfarinWisely™ is a trademark of MAICREST.</p>
-        </footer>
+        </nav>
     </div>
+
+    <main class="container">
+        <!-- Back navigation link -->
+        <div class="back-link-container">
+            <a href="index.html" class="back-link">&larr; Back to Home</a>
+        </div>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="page-brand">
+                <img src="warfarin-icon-round.png" alt="WarfarinWisely Icon" class="page-brand-icon">
+                <div class="page-title">
+                    <h1>WarfarinWisely</h1>
+                    <div class="page-subtitle">Healthcare Professional CDS Tool</div>
+                </div>
+            </div>
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
+                Professional Clinical Decision Support &bull; Strictly for Clinician Use Only
+            </p>
+        </header>
+
+        <!-- Two Column Content Layout -->
+        <div class="content-layout">
+            
+            <!-- Main Content Column -->
+            <div class="content-main">
+                
+                <!-- Section 1: About This App -->
+                <article class="retro-frame policy-card" id="about-app">
+                    <span class="figure-corner figure-corner--tl"></span>
+                    <span class="figure-corner figure-corner--tr"></span>
+                    <span class="figure-corner figure-corner--bl"></span>
+                    <span class="figure-corner figure-corner--br"></span>
+
+                    <h2>1. About The Application</h2>
+                    
+                    <div class="highlight-box" style="border-left-color: #EF4444;">
+                        <p style="color: var(--text); font-weight: 600; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-bottom: 4px;">
+                            ⚠️ HEALTHCARE PROFESSIONALS ONLY
+                        </p>
+                        <p style="font-size: 0.95rem;">
+                            This application is strictly designed for licensed healthcare professionals (pharmacists, physicians, nurses, anticoagulation specialists). <strong>Patients must not use this app for self-management or self-dosing.</strong>
+                        </p>
+                    </div>
+
+                    <h3>What is WarfarinWisely?</h3>
+                    <p>
+                        WarfarinWisely is a <strong>Clinical Decision Support (CDS) tool</strong> designed to assist licensed healthcare professionals in calculating modified weekly warfarin doses based on INR (International Normalized Ratio) test results. The app simplifies calculations using validated clinical guidelines from the <strong>Pharmaceutical Services Programme, Ministry of Health Malaysia</strong> (Anticoagulant Quick Guide, 1st Edition).
+                    </p>
+                    <p>
+                        This tool is NOT a medical device, NOT medical advice, and NOT a substitute for professional clinical judgment. Healthcare professionals must independently verify all calculated results before clinical application.
+                    </p>
+
+                    <h3>Calculation Methods</h3>
+                    <p>The app offers three evidence-based adjustment methods for calculating modified warfarin doses:</p>
+                    <ul>
+                        <li><strong>Method A (ICSI Guideline):</strong> Percentage-based adjustment (wadj = 15 &times; INR difference)</li>
+                        <li><strong>Method B (KKM Guideline):</strong> Alternative percentage-based adjustment (wadj = 10 &times; INR difference)</li>
+                        <li><strong>Method C (Manual/Custom):</strong> Custom adjustment defined by the healthcare professional (&plusmn;15%)</li>
+                    </ul>
+                    <p>Modified dose is calculated as: mcurD = curD &times; (100% &plusmn; wadj) and mapped to validated daily dose schedules.</p>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><strong>Real-time Dose Calculation:</strong> Calculates modified weekly warfarin doses based on INR test results</li>
+                        <li><strong>Input Validation:</strong> Validates dose range (3.0–102.0 mg weekly) and INR range (0.1–10.0)</li>
+                        <li><strong>Multiple Daily Schedules:</strong> Generates complete 7-day dose schedules for calculated weekly doses</li>
+                        <li><strong>PDF Reports:</strong> Export calculation results with timestamp and optional clinician signature for medical records</li>
+                        <li><strong>Secure Sharing:</strong> Share results to messaging apps for healthcare provider collaboration</li>
+                        <li><strong>Offline Operation:</strong> Works completely offline—no internet required, no data collection</li>
+                    </ul>
+                </article>
+
+                <!-- Section 2: Medical Disclaimer -->
+                <article class="retro-frame policy-card" id="disclaimer">
+                    <span class="figure-corner figure-corner--tl"></span>
+                    <span class="figure-corner figure-corner--tr"></span>
+                    <span class="figure-corner figure-corner--bl"></span>
+                    <span class="figure-corner figure-corner--br"></span>
+
+                    <h2>2. Medical Disclaimer</h2>
+                    
+                    <p>
+                        This WarfarinWisely application is intended as a <strong>Clinical Decision Support (CDS) tool for healthcare professionals only</strong>. By accessing and using this application, you acknowledge and agree to the following:
+                    </p>
+
+                    <h3>What This App IS</h3>
+                    <ul>
+                        <li>A calculation tool to assist healthcare professionals in modifying warfarin weekly doses based on INR results</li>
+                        <li>Based on validated pharmaceutical guidelines from the Malaysian Ministry of Health (Anticoagulant Quick Guide, 1st Edition)</li>
+                        <li>A resource for supporting—not replacing—professional clinical judgment and expertise</li>
+                    </ul>
+
+                    <h3>What This App IS NOT</h3>
+                    <ul>
+                        <li><strong>Not a medical device:</strong> This app is not classified, registered, approved, or certified as a medical device in any jurisdiction</li>
+                        <li><strong>Not medical advice:</strong> This app does not provide medical advice, diagnosis, or treatment recommendations</li>
+                        <li><strong>Not a substitute for professional judgment:</strong> Healthcare professionals must independently verify and validate all calculated results before clinical application</li>
+                        <li><strong>Not for patient self-management:</strong> Patients must not use this app. Use by patients for self-adjusting anticoagulation therapy is explicitly prohibited</li>
+                    </ul>
+
+                    <h3>Professional Responsibility</h3>
+                    <ul>
+                        <li>Healthcare professionals using this app remain fully responsible for all clinical decisions made</li>
+                        <li>All calculated doses must be independently verified before prescription or administration</li>
+                        <li>Healthcare professionals must consider the patient's complete clinical picture (comorbidities, drug interactions, bleeding risk, clinical status)</li>
+                        <li>Laboratory monitoring must continue as per established anticoagulation protocols</li>
+                    </ul>
+
+                    <h3>Liability Disclaimer</h3>
+                    <p><strong>The developer of this application assumes no liability for:</strong></p>
+                    <ul>
+                        <li>Any adverse outcomes, complications, or harm resulting from use or misuse of the calculated results</li>
+                        <li>Errors or inaccuracies in calculations</li>
+                        <li>Injuries or damages to patients or third parties</li>
+                    </ul>
+                </article>
+
+                <!-- Section 3: Privacy Policy -->
+                <article class="retro-frame policy-card" id="privacy">
+                    <span class="figure-corner figure-corner--tl"></span>
+                    <span class="figure-corner figure-corner--tr"></span>
+                    <span class="figure-corner figure-corner--bl"></span>
+                    <span class="figure-corner figure-corner--br"></span>
+
+                    <h2>3. Privacy Policy</h2>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">
+                        Last Updated: February 2026
+                    </p>
+
+                    <h3>TL;DR: What We Don't Do</h3>
+                    <div class="highlight-box">
+                        <ul style="margin-bottom: 0;">
+                            <li class="prohibited">We don't collect patient data</li>
+                            <li class="prohibited">We don't track usage or analytics</li>
+                            <li class="prohibited">We don't send your calculations to external servers</li>
+                            <li class="prohibited">We don't require an account, login, or email</li>
+                            <li class="prohibited">We don't use advertising or third-party trackers</li>
+                            <li>We work <strong>entirely offline</strong></li>
+                        </ul>
+                    </div>
+
+                    <h3>Data We Do NOT Collect</h3>
+                    <p>
+                        <strong>Patient Information:</strong> The app stores zero patient data. You provide input values (INR, current dose) temporarily for calculation, but these are <strong>not saved, logged, or transmitted anywhere</strong>.
+                    </p>
+                    <p>
+                        <strong>Usage Analytics:</strong> We do not track how often you use the app, which features you access, or how long sessions last. No analytics libraries are included.
+                    </p>
+                    <p>
+                        <strong>Location/Identifiers:</strong> We do not access your location, device identifiers, or other personal information.
+                    </p>
+
+                    <h3>Data We DO Store Locally (On Your Device Only)</h3>
+                    <p>The app stores <strong>only these user preferences</strong> locally on your device using Android SharedPreferences / iOS Keychain:</p>
+                    <ul>
+                        <li><strong>Haptic Feedback Toggle</strong> — Whether vibration feedback is enabled (default: on)</li>
+                        <li><strong>Dark Mode Toggle</strong> — Whether dark theme is enabled (default: off)</li>
+                        <li><strong>Signature Text</strong> — Optional text you enter for PDF report signatures (defaults to empty)</li>
+                    </ul>
+                    <p>These preferences are stored only on your device. They are never sent to any server. Uninstalling the app deletes all stored data immediately.</p>
+
+                    <h3>Calculation Data</h3>
+                    <p>All dose calculations happen <strong>entirely on your device</strong>. Calculations are not saved to device storage, sent to any server, or shared with third parties.</p>
+
+                    <h3>Offline Operation</h3>
+                    <p>This app requires <strong>no internet connection</strong> to use. All calculations run locally on your device.</p>
+                </article>
+
+                <!-- Section 4: Regulatory Positioning -->
+                <article class="retro-frame policy-card" id="regulatory">
+                    <span class="figure-corner figure-corner--tl"></span>
+                    <span class="figure-corner figure-corner--tr"></span>
+                    <span class="figure-corner figure-corner--bl"></span>
+                    <span class="figure-corner figure-corner--br"></span>
+
+                    <h2>4. Regulatory Positioning</h2>
+                    <h3>Why This Is NOT a Medical Device</h3>
+                    <p>This app is positioned as <strong>Clinical Decision Support (CDS) software</strong>, not a medical device. Understanding this distinction is important for healthcare professionals and regulators.</p>
+
+                    <ul>
+                        <li><strong>No Diagnosis:</strong> The app does not diagnose any medical condition. You, the healthcare professional, provide the diagnosis and INR value.</li>
+                        <li><strong>No Treatment Recommendation:</strong> The app calculates a adjusted dose; it does not recommend starting, stopping, or treating any condition. The clinician determines whether to apply the result.</li>
+                        <li><strong>No Patient-Directed Advice:</strong> The app is not intended for patients. Results are reviewed and interpreted by the clinician, who bears full clinical responsibility.</li>
+                        <li><strong>Supported Decision, Not Autonomous Decision:</strong> The app assists an existing clinical workflow (verification of dose calculations) but does not make autonomous clinical decisions.</li>
+                    </ul>
+
+                    <h3>Regulatory Status by Jurisdiction</h3>
+                    <ul>
+                        <li>🇺🇸 <strong>USA (FDA):</strong> Not classified as a medical device; exempted CDS software when used by licensed professionals with clinician verification</li>
+                        <li>🇬🇧 <strong>UK (MHRA):</strong> CDS tools used by professionals not subject to device regulations</li>
+                        <li>🇪🇺 <strong>EU (CE):</strong> Not classified as a medical device under MDR; software for professional use by licensed HCPs</li>
+                        <li>🇲🇾 <strong>Malaysia (MOH/NPRA):</strong> Not registered as a medical device; reference calculations for professional use</li>
+                    </ul>
+
+                    <h3>Evidence Base</h3>
+                    <p>The calculation is based on:</p>
+                    <ul>
+                        <li>Pharmaceutical Services Programme, Ministry of Health Malaysia — <strong>Anticoagulant Quick Guide (1st Edition)</strong></li>
+                        <li>Peer-reviewed clinical literature supporting ICSI and KKM dosing methods</li>
+                        <li>Validated warfarin dosing tables used in clinical practice</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Sidebar Navigation Column -->
+            <div class="content-sidebar">
+                <div class="sidebar-sticky">
+                    <div class="retro-frame outline-card">
+                        <span class="figure-corner figure-corner--tl"></span>
+                        <span class="figure-corner figure-corner--tr"></span>
+                        <span class="figure-corner figure-corner--bl"></span>
+                        <span class="figure-corner figure-corner--br"></span>
+                        
+                        <h4>Document Outline</h4>
+                        <ul class="outline-list">
+                            <li><a href="#about-app" class="outline-link">1. About The App</a></li>
+                            <li><a href="#disclaimer" class="outline-link">2. Medical Disclaimer</a></li>
+                            <li><a href="#privacy" class="outline-link">3. Privacy Policy</a></li>
+                            <li><a href="#regulatory" class="outline-link">4. Regulatory Position</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><a href="index.html" style="text-decoration: none;">&larr; Back to Home</a></p>
+            <p style="margin-top: 8px;">© 2026 MAICREST. All rights reserved. WarfarinWisely™ is a trademark of MAICREST.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts for theme -->
+    <script>
+        // Theme Switcher Logic
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
 </body>
 </html>
