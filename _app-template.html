@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--
+    MAICREST App Page Template
+    ──────────────────────────
+    HOW TO USE:
+    1. Copy this file and rename it to <appname>.html (e.g. myapp.html)
+    2. Replace every [PLACEHOLDER] below with real content
+    3. Add the new app card to apps.html catalog grid
+    4. Add the app card to the homepage preview in index.html (if featuring it)
+    5. Remove this comment block before publishing
+
+    SECTIONS INCLUDED:
+    - 1. About The Application  (required)
+    - 2. Medical/Legal Disclaimer  (required for healthcare apps; keep or adapt for others)
+    - 3. Privacy Policy  (required)
+    - 4. Regulatory Positioning  (required for medical CDS; optional for non-medical apps)
+
+    Remove optional sections that don't apply. Never remove the Privacy Policy section.
+-->
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[APP NAME] — info, disclosure, and privacy policy. Built by MAICREST TECHBITS.">
+    <title>[APP NAME] - Info &amp; Privacy Policy | MAICREST</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('theme')
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+            const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light')
+            document.documentElement.setAttribute('data-theme', theme)
+        })()
+    </script>
+</head>
+<body>
+
+    <!-- Floating Navigation Bar -->
+    <div class="container">
+        <nav class="navbar" aria-label="Primary navigation">
+            <div class="navbar-inner">
+                <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
+                    <span class="nav-brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
+                            <path d="M10,90 L10,10 L35,45 L50,25 L65,45 L90,10 L90,90 L75,90 L75,35 L50,70 L25,35 L25,90 Z" />
+                        </svg>
+                    </span>
+                    <span class="nav-brand-text">MAICREST</span>
+                </a>
+                <div class="nav-links">
+                    <a href="apps.html" class="nav-link">Apps</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main id="main-content" class="container">
+
+        <!-- Back navigation link -->
+        <div class="back-link-container">
+            <a href="apps.html" class="back-link">&larr; Back to Apps</a>
+        </div>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="page-brand">
+                <img src="[APP-ICON-FILENAME].png" alt="[APP NAME] app icon" class="page-brand-icon">
+                <div class="page-title">
+                    <h1>[APP NAME]</h1>
+                    <div class="page-subtitle">[APP CATEGORY — e.g. CLINICAL DECISION SUPPORT]</div>
+                </div>
+            </div>
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
+                [One-line tagline &bull; e.g. Platform &bull; Audience]
+            </p>
+        </header>
+
+        <!-- Two Column Content Layout -->
+        <div class="content-layout">
+
+            <!-- Main Content Column -->
+            <div class="content-main">
+
+                <!-- ─────────────────────────────────────────────
+                     SECTION 1: About The Application (REQUIRED)
+                     ───────────────────────────────────────────── -->
+                <article class="retro-frame policy-card" id="about-app">
+                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                    <h2>1. About The Application</h2>
+
+                    <!-- OPTIONAL: Include this warning box for healthcare/professional-only apps -->
+                    <div class="highlight-box" style="border-left-color: #EF4444;">
+                        <p style="color: var(--text); font-weight: 600; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-bottom: 4px;">
+                            [AUDIENCE NOTICE — e.g. HEALTHCARE PROFESSIONALS ONLY]
+                        </p>
+                        <p style="font-size: 0.95rem;">
+                            [Describe who may or may not use this app and any key restrictions.]
+                        </p>
+                    </div>
+
+                    <h3>What is [APP NAME]?</h3>
+                    <p>
+                        [Describe the app's purpose, who it is built for, and what problem it solves. Be specific and honest. Reference any evidence base, guidelines, or standards the app uses.]
+                    </p>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><strong>[Feature 1]:</strong> [Description]</li>
+                        <li><strong>[Feature 2]:</strong> [Description]</li>
+                        <li><strong>Offline Operation:</strong> Works completely offline — no internet required, no data collection.</li>
+                    </ul>
+                </article>
+
+                <!-- ─────────────────────────────────────────────────────────────────────
+                     SECTION 2: Disclaimer (REQUIRED; adapt wording for non-medical apps)
+                     ───────────────────────────────────────────────────────────────────── -->
+                <article class="retro-frame policy-card" id="disclaimer">
+                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                    <h2>2. Disclaimer</h2>
+
+                    <p>
+                        [STATE PURPOSE OF APP AND WHO IT IS FOR. Acknowledge limitations clearly. Do not overstate what the app can or cannot do.]
+                    </p>
+
+                    <h3>What This App IS</h3>
+                    <ul>
+                        <li>[What it is designed to do]</li>
+                        <li>[What evidence or standard it is based on]</li>
+                        <li>[Any supporting role it plays — not replacing human judgment/decisions]</li>
+                    </ul>
+
+                    <h3>What This App IS NOT</h3>
+                    <ul>
+                        <li><strong>Not [X]:</strong> [Explain exclusion]</li>
+                        <li><strong>Not [Y]:</strong> [Explain exclusion]</li>
+                    </ul>
+
+                    <h3>Liability Disclaimer</h3>
+                    <p><strong>The developer of this application assumes no liability for:</strong></p>
+                    <ul>
+                        <li>Any adverse outcomes resulting from use or misuse of the app</li>
+                        <li>Errors or inaccuracies in calculations or outputs</li>
+                        <li>Damages to users or third parties arising from reliance on this app</li>
+                    </ul>
+                </article>
+
+                <!-- ─────────────────────────────────────────────────
+                     SECTION 3: Privacy Policy (REQUIRED — never remove)
+                     ───────────────────────────────────────────────── -->
+                <article class="retro-frame policy-card" id="privacy">
+                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                    <h2>3. Privacy Policy</h2>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">
+                        Last Updated: [Month YYYY]
+                    </p>
+
+                    <h3>TL;DR: What We Don't Do</h3>
+                    <div class="highlight-box">
+                        <ul style="margin-bottom: 0;">
+                            <li class="prohibited">We don't collect [data type] data</li>
+                            <li class="prohibited">We don't track usage or analytics</li>
+                            <li class="prohibited">We don't send your data to external servers</li>
+                            <li class="prohibited">We don't require an account, login, or email</li>
+                            <li class="prohibited">We don't use advertising or third-party trackers</li>
+                            <li>We work <strong>entirely offline</strong></li>
+                        </ul>
+                    </div>
+
+                    <h3>Data We Do NOT Collect</h3>
+                    <p>
+                        <strong>[Data Category 1]:</strong> [Explain why this data is not collected and what happens to any transient inputs.]
+                    </p>
+                    <p>
+                        <strong>Usage Analytics:</strong> We do not track how often you use the app, which features you access, or how long sessions last. No analytics libraries are included.
+                    </p>
+                    <p>
+                        <strong>Location/Identifiers:</strong> We do not access your location, device identifiers, or other personal information.
+                    </p>
+
+                    <h3>Data We DO Store Locally (On Your Device Only)</h3>
+                    <p>The app stores <strong>only these user preferences</strong> locally on your device:</p>
+                    <ul>
+                        <li><strong>[Preference 1]</strong> — [What it stores and why]</li>
+                        <li><strong>Dark Mode Toggle</strong> — Whether dark theme is enabled (default: off)</li>
+                    </ul>
+                    <p>These preferences are stored only on your device. They are never sent to any server. Uninstalling the app deletes all stored data immediately.</p>
+
+                    <h3>Offline Operation</h3>
+                    <p>This app requires <strong>no internet connection</strong> to use. All processing runs locally on your device.</p>
+                </article>
+
+                <!-- ──────────────────────────────────────────────────────────────────────────
+                     SECTION 4: Regulatory Positioning (REQUIRED for medical CDS; OPTIONAL otherwise)
+                     ──────────────────────────────────────────────────────────────────────────── -->
+                <article class="retro-frame policy-card" id="regulatory">
+                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                    <h2>4. Regulatory Positioning</h2>
+                    <h3>Why This Is NOT a [Medical Device / Regulated Product]</h3>
+                    <p>
+                        [Explain the regulatory positioning clearly. State what category the app falls into and why it does not require medical device classification or equivalent regulation in your jurisdiction.]
+                    </p>
+
+                    <ul>
+                        <li><strong>[Criterion 1]:</strong> [Explanation]</li>
+                        <li><strong>[Criterion 2]:</strong> [Explanation]</li>
+                        <li><strong>[Criterion 3]:</strong> [Explanation]</li>
+                    </ul>
+
+                    <h3>Evidence Base</h3>
+                    <p>The app is based on:</p>
+                    <ul>
+                        <li>[Reference 1]</li>
+                        <li>[Reference 2]</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <!-- Sidebar Navigation Column -->
+            <div class="content-sidebar">
+                <div class="sidebar-sticky">
+                    <div class="retro-frame outline-card">
+                        <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                        <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                        <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                        <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                        <h4>Document Outline</h4>
+                        <ul class="outline-list">
+                            <li><a href="#about-app" class="outline-link">1. About The App</a></li>
+                            <li><a href="#disclaimer" class="outline-link">2. Disclaimer</a></li>
+                            <li><a href="#privacy" class="outline-link">3. Privacy Policy</a></li>
+                            <li><a href="#regulatory" class="outline-link">4. Regulatory Position</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MAICREST TECHBITS. All rights reserved. [APP NAME]&trade; is a trademark of MAICREST TECHBITS.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle')
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme')
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+            document.documentElement.setAttribute('data-theme', newTheme)
+            localStorage.setItem('theme', newTheme)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MAICREST app portfolio. All applications built to a single standard — useful, reliable, nothing unnecessary.">
+    <title>Apps - MAICREST</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('theme')
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+            const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light')
+            document.documentElement.setAttribute('data-theme', theme)
+        })()
+    </script>
+</head>
+<body>
+
+    <!-- Floating Navigation Bar -->
+    <div class="container">
+        <nav class="navbar" aria-label="Primary navigation">
+            <div class="navbar-inner">
+                <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
+                    <span class="nav-brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
+                            <path d="M10,90 L10,10 L35,45 L50,25 L65,45 L90,10 L90,90 L75,90 L75,35 L50,70 L25,35 L25,90 Z" />
+                        </svg>
+                    </span>
+                    <span class="nav-brand-text">MAICREST</span>
+                </a>
+                <div class="nav-links">
+                    <a href="apps.html" class="nav-link active" aria-current="page">Apps</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main id="main-content" class="container">
+
+        <!-- Page Header -->
+        <header class="catalog-header">
+            <div class="eyebrow">MAICREST TECHBITS</div>
+            <h1 class="catalog-title">All Apps</h1>
+            <p class="catalog-description">
+                Every application built to a single standard — useful, reliable, nothing unnecessary.
+            </p>
+        </header>
+
+        <!-- Apps Catalog Grid -->
+        <section aria-label="Application catalog">
+            <div class="catalog-grid">
+
+                <!-- WarfarinWisely -->
+                <div class="retro-frame app-card">
+                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                    <div>
+                        <div class="app-card-header">
+                            <div class="app-brand-info">
+                                <img src="warfarin-icon-round.png" alt="WarfarinWisely app icon" class="app-icon">
+                                <div class="app-title-group">
+                                    <h2 class="app-card-name">WarfarinWisely</h2>
+                                    <div class="app-subtitle">CLINICAL DECISION SUPPORT</div>
+                                </div>
+                            </div>
+                            <div class="app-platform-badges">
+                                <span class="platform-badge">Android</span>
+                                <span class="platform-badge">iOS</span>
+                            </div>
+                        </div>
+                        <div class="app-card-body">
+                            <p class="app-description">
+                                INR-based weekly warfarin dose calculator built for healthcare professionals. Instantly calculates modified daily dosage schedules using validated regional guidelines to support clinician workflows.
+                            </p>
+                            <div class="app-tags">
+                                <span class="app-tag">Dose Calculator</span>
+                                <span class="app-tag">Dose Tracker</span>
+                                <span class="app-tag">MOH Malaysia</span>
+                                <span class="app-tag">ICSI</span>
+                                <span class="app-tag">Local-First</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="app-card-footer">
+                        <a href="warfarinwisely.html" class="app-link" aria-label="View WarfarinWisely info and privacy policy">
+                            View Info &amp; Privacy Policy &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Placeholder for future apps — remove when a real app is added -->
+                <!-- To add a new app: copy the card block above, update content,
+                     create <appname>.html using _app-template.html, and remove this comment. -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MAICREST TECHBITS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle')
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme')
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+            document.documentElement.setAttribute('data-theme', newTheme)
+            localStorage.setItem('theme', newTheme)
+        })
+    </script>
+</body>
+</html>
