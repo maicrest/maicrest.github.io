@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MAICREST Mobile Apps portfolio and privacy policy hub. Custom software engineered for clinical decision support and social benefit.">
-    <title>MAICREST - Premium Software Design & Development</title>
+    <meta name="description" content="MAICREST software portfolio. Custom software engineered for clinical decision support and social benefit — deliberate by design, purposeful in every form.">
+    <title>MAICREST - Software Portfolio</title>
     <link rel="stylesheet" href="index.css">
     <script>
-        // Inline script to prevent theme flash
         (function() {
-            const storedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
+            const storedTheme = localStorage.getItem('theme')
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+            const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light')
+            document.documentElement.setAttribute('data-theme', theme)
+        })()
     </script>
 </head>
 <body>
 
     <!-- Floating Navigation Bar -->
     <div class="container">
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Primary navigation">
             <div class="navbar-inner">
-                <a href="#" class="nav-brand" aria-label="MAICREST Home">
-                    <span class="nav-brand-logo">
-                        <!-- Geometric Styled "M" Logo -->
+                <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
+                    <span class="nav-brand-logo" aria-hidden="true">
                         <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
                             <path d="M10,90 L10,10 L35,45 L50,25 L65,45 L90,10 L90,90 L75,90 L75,35 L50,70 L25,35 L25,90 Z" />
                         </svg>
@@ -32,17 +30,15 @@
                     <span class="nav-brand-text">MAICREST</span>
                 </a>
                 <div class="nav-links">
-                    <a href="#apps" class="nav-link">Apps</a>
+                    <a href="apps.html" class="nav-link">Apps</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#contact" class="nav-link">Contact</a>
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        <!-- Sun Icon -->
-                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <circle cx="12" cy="12" r="4" />
                             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
                         </svg>
-                        <!-- Moon Icon -->
-                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
                         </svg>
                     </button>
@@ -51,138 +47,56 @@
         </nav>
     </div>
 
-    <main class="container">
+    <main id="main-content" class="container">
+
         <!-- Hero Section -->
-        <header class="hero">
+        <header class="hero hero--centered">
             <div class="hero-content">
                 <div class="eyebrow">MAICREST TECHBITS</div>
                 <h1 class="hero-title">
-                    Deliberate by design. Purposeful in every <span class="hero-title-accent">form</span>.
+                    Deliberate by design.<br>Purposeful in every <span class="hero-title-accent">form</span>.
                 </h1>
                 <p class="hero-description">
                     Reliable architecture, no unnecessary complexity, honest documentation — applied equally to tools that matter and ideas worth exploring.
                 </p>
                 <div class="hero-actions">
-                    <a href="#apps" class="btn btn-primary">Explore Work</a>
+                    <a href="apps.html" class="btn btn-primary">Explore Work</a>
                     <a href="#about" class="btn btn-secondary">Our Philosophy</a>
-                </div>
-            </div>
-
-            <!-- Simulated Terminal Widget (Interactive Dosing calculator) -->
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span class="terminal-dot terminal-dot--red"></span>
-                        <span class="terminal-dot terminal-dot--yellow"></span>
-                        <span class="terminal-dot terminal-dot--green"></span>
-                    </div>
-                    <div class="terminal-title">warfarin_wisely_demo.sh</div>
-                    <div style="width: 42px;"></div> <!-- Spacer -->
-                </div>
-                <div class="terminal-tabs">
-                    <button class="terminal-tab-btn active" id="tabMethodB" onclick="setMethod('B')">Method B (MOH Malaysia)</button>
-                    <button class="terminal-tab-btn" id="tabMethodA" onclick="setMethod('A')">Method A (ICSI Guideline)</button>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-prompt-line">
-                        <span>$</span>
-                        <span style="color: #ECE9E2;">./warfarin_wisely_cds.sh --target-inr 2.5</span>
-                    </div>
-                    <div class="terminal-content">
-                        <!-- Inputs Grid -->
-                        <div class="terminal-inputs">
-                            <div class="input-group">
-                                <label class="input-label" for="calcWeeklyDose">Weekly Dose (mg)</label>
-                                <input type="number" id="calcWeeklyDose" class="terminal-input" value="35.0" step="0.5" min="3" max="102" oninput="calculateDose()">
-                            </div>
-                            <div class="input-group">
-                                <label class="input-label" for="calcINR">Measured INR</label>
-                                <input type="number" id="calcINR" class="terminal-input" value="1.5" step="0.1" min="0.1" max="10" oninput="calculateDose()">
-                            </div>
-                        </div>
-                        <!-- Outputs Console -->
-                        <div class="terminal-output" id="terminalOutput">
-                            <!-- Populated by JS -->
-                        </div>
-                    </div>
                 </div>
             </div>
         </header>
 
-        <!-- Bento Grid for Showcase & Contact -->
-        <section class="section" id="apps">
+        <!-- Featured Work Preview -->
+        <section class="section" id="apps" aria-labelledby="featured-heading">
             <div class="section-header">
                 <div class="eyebrow">Portfolio</div>
-                <h2 class="section-title">Featured Application</h2>
+                <h2 class="section-title" id="featured-heading">Featured Work</h2>
                 <p>Applications built to a single standard — useful, reliable, nothing unnecessary.</p>
             </div>
-            
-            <div class="bento-grid">
-                <!-- App Card -->
-                <div class="app-card-wrapper">
-                    <div class="retro-frame app-card">
-                        <span class="figure-corner figure-corner--tl"></span>
-                        <span class="figure-corner figure-corner--tr"></span>
-                        <span class="figure-corner figure-corner--bl"></span>
-                        <span class="figure-corner figure-corner--br"></span>
-                        
-                        <div>
-                            <div class="app-card-header">
-                                <div class="app-brand-info">
-                                    <img src="warfarin-icon-round.png" alt="WarfarinWisely Icon" class="app-icon">
-                                    <div class="app-title-group">
-                                        <h3>WarfarinWisely</h3>
-                                        <div class="app-subtitle">CLINICAL DECISION SUPPORT</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="app-card-body">
-                                <p class="app-description">
-                                    INR-based weekly warfarin dose calculator built for healthcare professionals. Instantly calculates modified daily dosage schedules using validated regional guidelines to support clinician workflows.
-                                </p>
-                                <div class="app-tags">
-                                    <span class="app-tag">Dose Calculator</span>
-                                    <span class="app-tag">Dose Tracker</span>
-                                    <span class="app-tag">MOH Malaysia</span>
-                                    <span class="app-tag">ICSI</span>
-                                    <span class="app-tag">Local-First</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="app-card-footer">
-                            <a href="warfarinwisely.html" class="app-link">View Info & Privacy Policy &rarr;</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Contact Card -->
-                <div class="contact-card-wrapper">
-                    <div class="retro-frame contact-card" id="contact">
-                        <span class="figure-corner figure-corner--tl"></span>
-                        <span class="figure-corner figure-corner--tr"></span>
-                        <span class="figure-corner figure-corner--bl"></span>
-                        <span class="figure-corner figure-corner--br"></span>
+            <div class="preview-bento">
+                <a href="warfarinwisely.html" class="retro-frame preview-tile" aria-label="WarfarinWisely">
+                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+                    <span class="preview-tile-icon-wrap" aria-hidden="true">
+                        <img src="warfarin-icon-round.png" alt="" class="preview-tile-icon" width="56" height="56">
+                    </span>
+                    <span class="preview-tile-name">WarfarinWisely</span>
+                </a>
+            </div>
 
-                        <div>
-                            <h3>Contact Me</h3>
-                            <p class="contact-description">
-                                Interested in collaboration, custom clinical software, or product feedback? Reach out directly.
-                            </p>
-                        </div>
-                        <a href="mailto:maicrest.des@gmail.com" class="btn btn-primary" style="width: 100%;">
-                            Email Developer
-                        </a>
-                    </div>
-                </div>
+            <div class="preview-cta">
+                <a href="apps.html" class="btn btn-secondary">View All Apps &rarr;</a>
             </div>
         </section>
 
-        <!-- About/Philosophy Section -->
-        <section class="section" id="about">
+        <!-- About / Philosophy Section -->
+        <section class="section" id="about" aria-labelledby="about-heading">
             <div class="section-header">
                 <div class="eyebrow">Software Philosophy</div>
-                <h2 class="section-title">Design with Purpose</h2>
+                <h2 class="section-title" id="about-heading">Design with Purpose</h2>
             </div>
             <div class="about-split">
                 <h3 class="about-editorial-title">
@@ -193,116 +107,49 @@
                         Most professional software is designed around the platform, not the person using it. Mandatory accounts, cloud dependencies, analytics pipelines — infrastructure that serves the product roadmap more than the practitioner relying on the tool.
                     </p>
                     <p>
-                        At <strong>MAICREST TECHBITS</strong>, every architectural decision is made in the user's interest. That means no unnecessary dependencies, no data handling that doesn't serve a direct purpose, and no friction between a professional and the work they need to do. <strong>WarfarinWisely</strong> is the first expression of that standard.
+                        At <strong>MAICREST TECHBITS</strong>, every architectural decision is made in the user's interest. That means no unnecessary dependencies, no data handling that doesn't serve a direct purpose, and no friction between a professional and the work they need to do. Every app in this portfolio is an expression of that standard.
                     </p>
                 </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact" aria-labelledby="contact-heading">
+            <div class="retro-frame contact-card">
+                <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                <div>
+                    <h2 id="contact-heading">Contact Me</h2>
+                    <p class="contact-description">
+                        Interested in collaboration, custom clinical software, or product feedback? Reach out directly.
+                    </p>
+                </div>
+                <a href="mailto:maicrest.des@gmail.com" class="btn btn-primary contact-btn">
+                    Email Developer
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 MAICREST TECHBITS. All rights reserved.</p>
-            
+            <p>&copy; 2026 MAICREST TECHBITS. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts for theme and calculator -->
     <script>
-        // Theme Switcher Logic
-        const themeToggle = document.getElementById('themeToggle');
+        const themeToggle = document.getElementById('themeToggle')
         themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Calculator Dosing Logic
-        let activeMethod = 'B'; // Default to Method B (MOH Malaysia)
-
-        function setMethod(method) {
-            activeMethod = method;
-            document.getElementById('tabMethodA').classList.toggle('active', method === 'A');
-            document.getElementById('tabMethodB').classList.toggle('active', method === 'B');
-            calculateDose();
-        }
-
-        function distributeWeeklyDose(weekly) {
-            const base = Math.floor(weekly / 7 * 2) / 2; // base to nearest 0.5mg
-            const schedule = Array(7).fill(base);
-            let sum = base * 7;
-            let days = [0, 2, 4, 6, 1, 3, 5]; // spread them out
-            let i = 0;
-            while (sum < weekly - 0.1 && i < 7) {
-                schedule[days[i]] += 0.5;
-                sum += 0.5;
-                i++;
-            }
-            return schedule;
-        }
-
-        function calculateDose() {
-            const weeklyDose = parseFloat(document.getElementById('calcWeeklyDose').value);
-            const inr = parseFloat(document.getElementById('calcINR').value);
-            const outputElement = document.getElementById('terminalOutput');
-
-            if (isNaN(weeklyDose) || isNaN(inr) || weeklyDose <= 0 || inr <= 0) {
-                outputElement.innerHTML = `<div class="terminal-output-empty">Waiting for valid inputs...</div>`;
-                return;
-            }
-
-            const targetINR = 2.5; // Midpoint of 2.0 - 3.0
-            const inrDiff = targetINR - inr;
-            
-            // Adjust factor based on Method A (15) or B (10)
-            const factor = activeMethod === 'A' ? 15 : 10;
-            const wadjPercent = factor * inrDiff;
-            const changeMg = weeklyDose * (wadjPercent / 100);
-            const newWeeklyDose = Math.round((weeklyDose + changeMg) * 2) / 2; // Round to nearest 0.5mg
-
-            // Generate daily schedule
-            const schedule = distributeWeeklyDose(newWeeklyDose);
-            const daysNames = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-
-            let htmlContent = `
-                <div class="terminal-result-row">
-                    <span>INR Diff:</span>
-                    <span>${inrDiff >= 0 ? '+' : ''}${inrDiff.toFixed(1)}</span>
-                </div>
-                <div class="terminal-result-row">
-                    <span>Adjustment:</span>
-                    <span>${wadjPercent >= 0 ? '+' : ''}${wadjPercent.toFixed(1)}%</span>
-                </div>
-                <div class="terminal-result-row">
-                    <span>New Weekly:</span>
-                    <span class="terminal-result-val">${newWeeklyDose.toFixed(1)} mg</span>
-                </div>
-                <div style="margin-top: 8px;">
-                    <div class="input-label" style="font-size: 0.7rem;">7-Day Schedule (mg)</div>
-                    <div class="terminal-schedule-grid">
-            `;
-
-            for (let i = 0; i < 7; i++) {
-                htmlContent += `
-                    <div class="terminal-schedule-day">
-                        <span class="terminal-schedule-name">${daysNames[i]}</span>
-                        <span class="terminal-schedule-val">${schedule[i]}</span>
-                    </div>
-                `;
-            }
-
-            htmlContent += `
-                    </div>
-                </div>
-            `;
-
-            outputElement.innerHTML = htmlContent;
-        }
-
-        // Initialize calculator
-        calculateDose();
+            const currentTheme = document.documentElement.getAttribute('data-theme')
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+            document.documentElement.setAttribute('data-theme', newTheme)
+            localStorage.setItem('theme', newTheme)
+        })
     </script>
 </body>
 </html>
