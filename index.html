@@ -1,155 +1,214 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MAICREST software portfolio. Custom software engineered for clinical decision support and social benefit — deliberate by design, purposeful in every form.">
     <title>MAICREST - Software Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="index.css">
-    <script>
-        (function() {
-            const storedTheme = localStorage.getItem('theme')
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-            const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light')
-            document.documentElement.setAttribute('data-theme', theme)
-        })()
-    </script>
 </head>
-<body>
+<body class="page-home">
 
-    <!-- Floating Navigation Bar -->
-    <div class="container">
+    <!-- Brand mark (see docs/maicrest-brand-board.html) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="mai-logo" viewBox="0 0 580 480" fill="currentColor">
+            <g transform="translate(-1960,-2660)">
+                <path d="M2400,3100L2400,2800L2500,2750L2500,3100L2400,3100Z"/>
+                <path d="M2400,3100L2400,2800L2500,2750L2500,3100L2400,3100ZM2402,3098L2498,3098L2498,2753.24L2402,2801.24L2402,3098Z"/>
+                <path d="M2100,3000L2100,3100L2000,3100L2000,2700L2100,2750L2100,2900L2200,2950L2100,3000Z"/>
+                <path d="M2100,3000L2100,3100L2000,3100L2000,2700L2100,2750L2100,2900L2200,2950L2100,3000ZM2099.11,2998.21L2195.53,2950L2099.11,2901.79C2098.43,2901.45 2098,2900.76 2098,2900L2098,2751.24L2002,2703.24L2002,3098L2098,3098L2098,3000C2098,2999.24 2098.43,2998.55 2099.11,2998.21Z"/>
+                <g transform="translate(200,0)">
+                    <path d="M2000,3100L2000,2800L1900,2750L2000,2700L2100,2750L2100,3100L2000,3100Z"/>
+                    <path d="M2000,3100L2000,2800L1900,2750L2000,2700L2100,2750L2100,3100L2000,3100ZM2002,3098L2098,3098L2098,2751.24L2000,2702.24L1904.47,2750L2000.89,2798.21C2001.57,2798.55 2002,2799.24 2002,2800L2002,3098Z"/>
+                </g>
+                <path d="M2400,2700L2400,2800L2300,2750L2400,2700Z"/>
+                <path d="M2400,2700L2400,2800L2300,2750L2400,2700ZM2398,2703.24L2304.47,2750L2398,2796.76L2398,2703.24Z"/>
+            </g>
+        </symbol>
+    </svg>
+
+    <div class="container site-nav-slot">
         <nav class="navbar" aria-label="Primary navigation">
             <div class="navbar-inner">
                 <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
                     <span class="nav-brand-logo" aria-hidden="true">
-                        <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
-                            <path d="M10,90 L10,10 L35,45 L50,25 L65,45 L90,10 L90,90 L75,90 L75,35 L50,70 L25,35 L25,90 Z" />
-                        </svg>
+                        <svg viewBox="0 0 580 480"><use href="#mai-logo"/></svg>
                     </span>
-                    <span class="nav-brand-text">MAICREST</span>
+                    <span class="nav-brand-text">maicrest</span>
                 </a>
-                <div class="nav-links">
+                <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div class="nav-links" id="navMenu">
                     <a href="apps.html" class="nav-link">Apps</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-                        </svg>
-                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-                        </svg>
-                    </button>
+                    <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
                 </div>
             </div>
         </nav>
     </div>
 
-    <main id="main-content" class="container">
+    <main id="main-content">
 
         <!-- Hero Section -->
-        <header class="hero hero--centered">
-            <div class="hero-content">
-                <div class="eyebrow">MAICREST TECHBITS</div>
-                <h1 class="hero-title">
-                    Deliberate by design.<br>Purposeful in every <span class="hero-title-accent">form</span>.
-                </h1>
-                <p class="hero-description">
-                    Reliable architecture, no unnecessary complexity, honest documentation — applied equally to tools that matter and ideas worth exploring.
-                </p>
-                <div class="hero-actions">
-                    <a href="apps.html" class="btn btn-primary">Explore Work</a>
-                    <a href="#about" class="btn btn-secondary">Our Philosophy</a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Featured Work Preview -->
-        <section class="section" id="apps" aria-labelledby="featured-heading">
-            <div class="section-header">
-                <div class="eyebrow">Portfolio</div>
-                <h2 class="section-title" id="featured-heading">Featured Work</h2>
-                <p>Applications built to a single standard — useful, reliable, nothing unnecessary.</p>
-            </div>
-
-            <div class="preview-bento">
-                <a href="warfarinwisely.html" class="retro-frame preview-tile" aria-label="WarfarinWisely">
-                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
-                    <span class="preview-tile-icon-wrap" aria-hidden="true">
-                        <img src="warfarin-icon-round.png" alt="" class="preview-tile-icon" width="56" height="56">
-                    </span>
-                    <span class="preview-tile-name">WarfarinWisely</span>
-                </a>
-            </div>
-
-            <div class="preview-cta">
-                <a href="apps.html" class="btn btn-secondary">View All Apps &rarr;</a>
+        <section class="hero-band">
+            <div class="container">
+                <header class="hero hero--centered">
+                    <div class="hero-content">
+                        <div class="eyebrow">MAICREST TECHBITS</div>
+                        <h1 class="hero-title">
+                            Deliberate by design.<br>Purposeful in every <span class="hero-title-accent">form</span>.
+                        </h1>
+                        <p class="hero-description">
+                            Reliable architecture, no unnecessary complexity, honest documentation — applied equally to tools that matter and ideas worth exploring.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="apps.html" class="btn btn-primary btn-lg">Explore Work</a>
+                            <a href="#about" class="btn btn-secondary btn-lg">Our Philosophy</a>
+                        </div>
+                    </div>
+                </header>
             </div>
         </section>
 
-        <!-- About / Philosophy Section -->
-        <section class="section" id="about" aria-labelledby="about-heading">
-            <div class="section-header">
-                <div class="eyebrow">Software Philosophy</div>
-                <h2 class="section-title" id="about-heading">Design with Purpose</h2>
+        <div class="container">
+
+            <!-- Principles Strip -->
+            <div class="principles-strip" aria-label="Engineering principles">
+                <span class="principle-item">Local-first</span>
+                <span class="principle-item">No tracking</span>
+                <span class="principle-item">Evidence-based</span>
+                <span class="principle-item">Honest docs</span>
             </div>
-            <div class="about-split">
-                <h3 class="about-editorial-title">
-                    "The best tool asks for nothing it doesn't need, and delivers exactly what it promises."
-                </h3>
-                <div class="about-text">
-                    <p>
-                        Most professional software is designed around the platform, not the person using it. Mandatory accounts, cloud dependencies, analytics pipelines — infrastructure that serves the product roadmap more than the practitioner relying on the tool.
+
+            <!-- Featured Work -->
+            <section class="section" id="apps" aria-labelledby="featured-heading">
+                <div class="feature-split">
+                    <div class="feature-copy">
+                        <div class="eyebrow">Portfolio</div>
+                        <h2 class="section-title" id="featured-heading">Featured Work</h2>
+                        <p>
+                            Applications built to a single standard — useful, reliable, nothing unnecessary. Each one earns its place in the workflow it was made for.
+                        </p>
+                        <a href="apps.html" class="btn btn-secondary">View All Apps &rarr;</a>
+                    </div>
+
+                    <div class="retro-frame feature-frame">
+                        <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
+                        <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
+                        <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
+                        <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+
+                        <a href="warfarinwisely.html" class="feature-tile" aria-label="WarfarinWisely — clinical decision support">
+                            <img src="warfarin-icon-round.png" alt="" class="feature-tile-icon" width="72" height="72">
+                            <span class="feature-tile-sub">Clinical Decision Support</span>
+                            <span class="feature-tile-name">WarfarinWisely</span>
+                            <span class="feature-tile-link">View app &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Philosophy Pull-Quote Band -->
+        <section class="dark-band" aria-labelledby="philosophy-heading">
+            <div class="container">
+                <div class="dark-band-inner">
+                    <div class="eyebrow" id="philosophy-heading">Software Philosophy</div>
+                    <p class="dark-band-quote">
+                        The best tool asks for nothing it doesn't need, and delivers exactly what it <span class="hero-title-accent">promises</span>.
                     </p>
-                    <p>
-                        At <strong>MAICREST TECHBITS</strong>, every architectural decision is made in the user's interest. That means no unnecessary dependencies, no data handling that doesn't serve a direct purpose, and no friction between a professional and the work they need to do. Every app in this portfolio is an expression of that standard.
-                    </p>
+                    <div class="dark-band-cite">MAICREST Design Principle</div>
+                    <div class="dark-band-actions">
+                        <a href="#about" class="btn btn-secondary btn-lg">Read our philosophy</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="section" id="contact" aria-labelledby="contact-heading">
-            <div class="retro-frame contact-card">
-                <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
+        <div class="container">
 
-                <div>
-                    <h2 id="contact-heading">Contact Me</h2>
-                    <p class="contact-description">
-                        Interested in collaboration, custom clinical software, or product feedback? Reach out directly.
-                    </p>
+            <!-- About / Philosophy Section -->
+            <section class="section section--plain" id="about" aria-labelledby="about-heading">
+                <div class="section-header">
+                    <div class="eyebrow">Design with Purpose</div>
+                    <h2 class="section-title" id="about-heading">Built in the user's interest</h2>
                 </div>
-                <a href="mailto:maicrest.des@gmail.com" class="btn btn-primary contact-btn">
-                    Email Developer
-                </a>
+                <div class="about-split">
+                    <h3 class="about-editorial-title">
+                        Every architectural decision is made for the person using the tool — not the platform behind it.
+                    </h3>
+                    <div class="about-text">
+                        <p>
+                            Most professional software is designed around the platform, not the person using it. Mandatory accounts, cloud dependencies, analytics pipelines — infrastructure that serves the product roadmap more than the practitioner relying on the tool.
+                        </p>
+                        <p>
+                            At <strong>MAICREST TECHBITS</strong>, that means no unnecessary dependencies, no data handling that doesn't serve a direct purpose, and no friction between a professional and the work they need to do. Every app in this portfolio is an expression of that standard.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Contact CTA Band -->
+        <section class="cta-band" id="contact" aria-labelledby="cta-band-heading">
+            <div class="container">
+                <div class="cta-band-inner">
+                    <h2 class="cta-band-title" id="cta-band-heading">So, what are we building?</h2>
+                    <p class="cta-band-description">Sharp tools. Fit right. Interested in collaboration, custom clinical software, or product feedback? Reach out directly.</p>
+                    <a href="mailto:maicrest.des@gmail.com" class="btn btn-primary btn-lg">Email Developer</a>
+                </div>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 MAICREST TECHBITS. All rights reserved.</p>
+            <div class="site-footer-grid">
+                <div class="footer-brand-col">
+                    <span class="footer-brand">
+                        <svg viewBox="0 0 580 480" aria-hidden="true"><use href="#mai-logo"/></svg>
+                        maicrest
+                    </span>
+                    <p class="footer-tagline">Sharp tools. Fit right. Custom software engineered for clinical decision support and social benefit.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="apps.html">All Apps</a></li>
+                        <li><a href="warfarinwisely.html">WarfarinWisely</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="warfarinwisely.html#privacy">Privacy Policy</a></li>
+                        <li><a href="warfarinwisely.html#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAICREST TECHBITS. All rights reserved.</p>
+                <p>Geist &middot; #BC3A24</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle')
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme')
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
-            document.documentElement.setAttribute('data-theme', newTheme)
-            localStorage.setItem('theme', newTheme)
-        })
-    </script>
+    <script src="nav.js"></script>
 </body>
 </html>

@@ -1,48 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WarfarinWisely clinical decision support info, medical disclosures, and privacy policies. Fully transparent, local-first documentation.">
     <title>WarfarinWisely - Info & Privacy Policy</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="index.css">
-    <script>
-        // Inline script to prevent theme flash
-        (function() {
-            const storedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
 </head>
 <body>
+
+    <!-- Brand mark (see docs/maicrest-brand-board.html) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="mai-logo" viewBox="0 0 580 480" fill="currentColor">
+            <g transform="translate(-1960,-2660)">
+                <path d="M2400,3100L2400,2800L2500,2750L2500,3100L2400,3100Z"/>
+                <path d="M2400,3100L2400,2800L2500,2750L2500,3100L2400,3100ZM2402,3098L2498,3098L2498,2753.24L2402,2801.24L2402,3098Z"/>
+                <path d="M2100,3000L2100,3100L2000,3100L2000,2700L2100,2750L2100,2900L2200,2950L2100,3000Z"/>
+                <path d="M2100,3000L2100,3100L2000,3100L2000,2700L2100,2750L2100,2900L2200,2950L2100,3000ZM2099.11,2998.21L2195.53,2950L2099.11,2901.79C2098.43,2901.45 2098,2900.76 2098,2900L2098,2751.24L2002,2703.24L2002,3098L2098,3098L2098,3000C2098,2999.24 2098.43,2998.55 2099.11,2998.21Z"/>
+                <g transform="translate(200,0)">
+                    <path d="M2000,3100L2000,2800L1900,2750L2000,2700L2100,2750L2100,3100L2000,3100Z"/>
+                    <path d="M2000,3100L2000,2800L1900,2750L2000,2700L2100,2750L2100,3100L2000,3100ZM2002,3098L2098,3098L2098,2751.24L2000,2702.24L1904.47,2750L2000.89,2798.21C2001.57,2798.55 2002,2799.24 2002,2800L2002,3098Z"/>
+                </g>
+                <path d="M2400,2700L2400,2800L2300,2750L2400,2700Z"/>
+                <path d="M2400,2700L2400,2800L2300,2750L2400,2700ZM2398,2703.24L2304.47,2750L2398,2796.76L2398,2703.24Z"/>
+            </g>
+        </symbol>
+    </svg>
 
     <!-- Floating Navigation Bar -->
     <div class="container">
         <nav class="navbar" aria-label="Primary navigation">
             <div class="navbar-inner">
                 <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
-                    <span class="nav-brand-logo">
-                        <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
-                            <path d="M10,90 L10,10 L35,45 L50,25 L65,45 L90,10 L90,90 L75,90 L75,35 L50,70 L25,35 L25,90 Z" />
-                        </svg>
+                    <span class="nav-brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 580 480"><use href="#mai-logo"/></svg>
                     </span>
-                    <span class="nav-brand-text">MAICREST</span>
+                    <span class="nav-brand-text">maicrest</span>
                 </a>
-                <div class="nav-links">
+                <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div class="nav-links" id="navMenu">
                     <a href="apps.html" class="nav-link">Apps</a>
                     <a href="index.html#about" class="nav-link">About</a>
                     <a href="index.html#contact" class="nav-link">Contact</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-                        </svg>
-                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-                        </svg>
-                    </button>
+                    <a href="index.html#contact" class="btn btn-primary nav-cta">Get in touch</a>
                 </div>
             </div>
         </nav>
@@ -63,7 +68,7 @@
                     <div class="page-subtitle">Healthcare Professional CDS Tool</div>
                 </div>
             </div>
-            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
+            <p style="font-family: 'Geist Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
                 Professional Clinical Decision Support &bull; Strictly for Clinician Use Only
             </p>
         </header>
@@ -84,7 +89,7 @@
                     <h2>1. About The Application</h2>
                     
                     <div class="highlight-box" style="border-left-color: #EF4444;">
-                        <p style="color: var(--text); font-weight: 600; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-bottom: 4px;">
+                        <p style="color: var(--text); font-weight: 600; font-family: 'Geist Mono', monospace; font-size: 0.85rem; margin-bottom: 4px;">
                             ⚠️ HEALTHCARE PROFESSIONALS ONLY
                         </p>
                         <p style="font-size: 0.95rem;">
@@ -175,7 +180,7 @@
                     <span class="figure-corner figure-corner--br"></span>
 
                     <h2>3. Privacy Policy</h2>
-                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">
+                    <p style="font-family: 'Geist Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">
                         Last Updated: June 2026
                     </p>
 
@@ -272,22 +277,45 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 MAICREST TECHBITS. All rights reserved. WarfarinWisely&trade; is a trademark of MAICREST TECHBITS.</p>
+            <div class="site-footer-grid">
+                <div class="footer-brand-col">
+                    <span class="footer-brand">
+                        <svg viewBox="0 0 580 480" aria-hidden="true"><use href="#mai-logo"/></svg>
+                        maicrest
+                    </span>
+                    <p class="footer-tagline">Sharp tools. Fit right. Custom software engineered for clinical decision support and social benefit.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="apps.html">All Apps</a></li>
+                        <li><a href="warfarinwisely.html">WarfarinWisely</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAICREST TECHBITS. All rights reserved. WarfarinWisely&trade; is a trademark of MAICREST TECHBITS.</p>
+                <p>Geist &middot; #BC3A24</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Scripts for theme -->
-    <script>
-        // Theme Switcher Logic
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    </script>
+    <script src="nav.js"></script>
 </body>
 </html>
