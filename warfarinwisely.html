@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="page-site">
 
     <!-- Brand mark (see docs/maicrest-brand-board.html) -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -30,8 +30,7 @@
         </symbol>
     </svg>
 
-    <!-- Floating Navigation Bar -->
-    <div class="container">
+    <div class="container site-nav-slot">
         <nav class="navbar" aria-label="Primary navigation">
             <div class="navbar-inner">
                 <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
@@ -53,25 +52,30 @@
         </nav>
     </div>
 
-    <main id="main-content" class="container">
-        <!-- Back navigation link -->
-        <div class="back-link-container">
-            <a href="apps.html" class="back-link">&larr; Back to Apps</a>
-        </div>
+    <main id="main-content">
 
-        <!-- Page Header -->
-        <header class="page-header">
-            <div class="page-brand">
-                <img src="warfarin-icon-round.png" alt="WarfarinWisely Icon" class="page-brand-icon">
-                <div class="page-title">
-                    <h1>WarfarinWisely</h1>
-                    <div class="page-subtitle">Healthcare Professional CDS Tool</div>
+        <section class="hero-band hero-band--compact">
+            <div class="container">
+                <div class="back-link-container">
+                    <a href="apps.html" class="back-link">&larr; Back to Apps</a>
                 </div>
+
+                <header class="page-header">
+                    <div class="page-brand">
+                        <img src="warfarin-icon-round.png" alt="WarfarinWisely Icon" class="page-brand-icon">
+                        <div class="page-title">
+                            <h1>WarfarinWisely</h1>
+                            <div class="page-subtitle">Healthcare Professional CDS Tool</div>
+                        </div>
+                    </div>
+                    <p class="page-meta">
+                        Professional Clinical Decision Support &bull; Strictly for Clinician Use Only
+                    </p>
+                </header>
             </div>
-            <p style="font-family: 'Geist Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
-                Professional Clinical Decision Support &bull; Strictly for Clinician Use Only
-            </p>
-        </header>
+        </section>
+
+        <div class="container">
 
         <!-- Two Column Content Layout -->
         <div class="content-layout">
@@ -80,19 +84,14 @@
             <div class="content-main">
                 
                 <!-- Section 1: About This App -->
-                <article class="retro-frame policy-card" id="about-app">
-                    <span class="figure-corner figure-corner--tl"></span>
-                    <span class="figure-corner figure-corner--tr"></span>
-                    <span class="figure-corner figure-corner--bl"></span>
-                    <span class="figure-corner figure-corner--br"></span>
-
+                <article class="policy-card surface-card" id="about-app">
                     <h2>1. About The Application</h2>
                     
-                    <div class="highlight-box" style="border-left-color: #EF4444;">
-                        <p style="color: var(--text); font-weight: 600; font-family: 'Geist Mono', monospace; font-size: 0.85rem; margin-bottom: 4px;">
+                    <div class="highlight-box highlight-box--warning">
+                        <p class="highlight-box-title">
                             ⚠️ HEALTHCARE PROFESSIONALS ONLY
                         </p>
-                        <p style="font-size: 0.95rem;">
+                        <p class="highlight-box-text">
                             This application is strictly designed for licensed healthcare professionals (pharmacists, physicians, nurses, anticoagulation specialists). <strong>Patients must not use this app for self-management or self-dosing.</strong> This app is intended for use in non-bleeding patients only. Clinician must independently assess and confirm the absence of active bleeding before use.
                         </p>
                     </div>
@@ -127,12 +126,7 @@
                 </article>
 
                 <!-- Section 2: Medical Disclaimer -->
-                <article class="retro-frame policy-card" id="disclaimer">
-                    <span class="figure-corner figure-corner--tl"></span>
-                    <span class="figure-corner figure-corner--tr"></span>
-                    <span class="figure-corner figure-corner--bl"></span>
-                    <span class="figure-corner figure-corner--br"></span>
-
+                <article class="policy-card surface-card" id="disclaimer">
                     <h2>2. Medical Disclaimer</h2>
                     
                     <p>
@@ -173,20 +167,15 @@
                 </article>
 
                 <!-- Section 3: Privacy Policy -->
-                <article class="retro-frame policy-card" id="privacy">
-                    <span class="figure-corner figure-corner--tl"></span>
-                    <span class="figure-corner figure-corner--tr"></span>
-                    <span class="figure-corner figure-corner--bl"></span>
-                    <span class="figure-corner figure-corner--br"></span>
-
+                <article class="policy-card surface-card" id="privacy">
                     <h2>3. Privacy Policy</h2>
-                    <p style="font-family: 'Geist Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">
+                    <p class="policy-updated">
                         Last Updated: June 2026
                     </p>
 
                     <h3>TL;DR: What We Don't Do</h3>
                     <div class="highlight-box">
-                        <ul style="margin-bottom: 0;">
+                        <ul class="highlight-box-list">
                             <li class="prohibited">We don't collect patient data</li>
                             <li class="prohibited">We don't track usage or analytics</li>
                             <li class="prohibited">We don't send your calculations to external servers</li>
@@ -224,12 +213,7 @@
                 </article>
 
                 <!-- Section 4: Regulatory Positioning -->
-                <article class="retro-frame policy-card" id="regulatory">
-                    <span class="figure-corner figure-corner--tl"></span>
-                    <span class="figure-corner figure-corner--tr"></span>
-                    <span class="figure-corner figure-corner--bl"></span>
-                    <span class="figure-corner figure-corner--br"></span>
-
+                <article class="policy-card surface-card" id="regulatory">
                     <h2>4. Regulatory Positioning</h2>
                     <h3>Why This Is NOT a Medical Device</h3>
                     <p>This app is positioned as <strong>Clinical Decision Support (CDS) software</strong>, not a medical device. Understanding this distinction is important for healthcare professionals and regulators.</p>
@@ -256,12 +240,7 @@
             <!-- Sidebar Navigation Column -->
             <div class="content-sidebar">
                 <div class="sidebar-sticky">
-                    <div class="retro-frame outline-card">
-                        <span class="figure-corner figure-corner--tl"></span>
-                        <span class="figure-corner figure-corner--tr"></span>
-                        <span class="figure-corner figure-corner--bl"></span>
-                        <span class="figure-corner figure-corner--br"></span>
-                        
+                    <div class="outline-card surface-card">
                         <h4>Document Outline</h4>
                         <ul class="outline-list">
                             <li><a href="#about-app" class="outline-link">1. About The App</a></li>
@@ -274,6 +253,9 @@
             </div>
 
         </div>
+
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -285,7 +267,6 @@
                         <svg viewBox="0 0 580 480" aria-hidden="true"><use href="#mai-logo"/></svg>
                         maicrest
                     </span>
-                    <p class="footer-tagline">Sharp tools. Fit right. Custom software engineered for clinical decision support and social benefit.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Product</h4>
@@ -301,17 +282,9 @@
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#disclaimer">Disclaimer</a></li>
-                    </ul>
-                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 MAICREST TECHBITS. All rights reserved. WarfarinWisely&trade; is a trademark of MAICREST TECHBITS.</p>
-                <p>Geist &middot; #BC3A24</p>
             </div>
         </div>
     </footer>

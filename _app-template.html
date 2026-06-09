@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="page-site">
 
     <!-- Brand mark (see docs/maicrest-brand-board.html) -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -48,8 +48,7 @@
         </symbol>
     </svg>
 
-    <!-- Floating Navigation Bar -->
-    <div class="container">
+    <div class="container site-nav-slot">
         <nav class="navbar" aria-label="Primary navigation">
             <div class="navbar-inner">
                 <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
@@ -71,26 +70,30 @@
         </nav>
     </div>
 
-    <main id="main-content" class="container">
+    <main id="main-content">
 
-        <!-- Back navigation link -->
-        <div class="back-link-container">
-            <a href="apps.html" class="back-link">&larr; Back to Apps</a>
-        </div>
-
-        <!-- Page Header -->
-        <header class="page-header">
-            <div class="page-brand">
-                <img src="[APP-ICON-FILENAME].png" alt="[APP NAME] app icon" class="page-brand-icon">
-                <div class="page-title">
-                    <h1>[APP NAME]</h1>
-                    <div class="page-subtitle">[APP CATEGORY — e.g. CLINICAL DECISION SUPPORT]</div>
+        <section class="hero-band hero-band--compact">
+            <div class="container">
+                <div class="back-link-container">
+                    <a href="apps.html" class="back-link">&larr; Back to Apps</a>
                 </div>
+
+                <header class="page-header">
+                    <div class="page-brand">
+                        <img src="[APP-ICON-FILENAME].png" alt="[APP NAME] app icon" class="page-brand-icon">
+                        <div class="page-title">
+                            <h1>[APP NAME]</h1>
+                            <div class="page-subtitle">[APP CATEGORY — e.g. CLINICAL DECISION SUPPORT]</div>
+                        </div>
+                    </div>
+                    <p class="page-meta">
+                        [One-line tagline &bull; e.g. Platform &bull; Audience]
+                    </p>
+                </header>
             </div>
-            <p style="font-family: 'Geist Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
-                [One-line tagline &bull; e.g. Platform &bull; Audience]
-            </p>
-        </header>
+        </section>
+
+        <div class="container">
 
         <!-- Two Column Content Layout -->
         <div class="content-layout">
@@ -101,20 +104,15 @@
                 <!-- ─────────────────────────────────────────────
                      SECTION 1: About The Application (REQUIRED)
                      ───────────────────────────────────────────── -->
-                <article class="retro-frame policy-card" id="about-app">
-                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
-
+                <article class="policy-card surface-card" id="about-app">
                     <h2>1. About The Application</h2>
 
                     <!-- OPTIONAL: Include this warning box for healthcare/professional-only apps -->
-                    <div class="highlight-box" style="border-left-color: #EF4444;">
-                        <p style="color: var(--text); font-weight: 600; font-family: 'Geist Mono', monospace; font-size: 0.85rem; margin-bottom: 4px;">
+                    <div class="highlight-box highlight-box--warning">
+                        <p class="highlight-box-title">
                             [AUDIENCE NOTICE — e.g. HEALTHCARE PROFESSIONALS ONLY]
                         </p>
-                        <p style="font-size: 0.95rem;">
+                        <p class="highlight-box-text">
                             [Describe who may or may not use this app and any key restrictions.]
                         </p>
                     </div>
@@ -135,12 +133,7 @@
                 <!-- ─────────────────────────────────────────────────────────────────────
                      SECTION 2: Disclaimer (REQUIRED; adapt wording for non-medical apps)
                      ───────────────────────────────────────────────────────────────────── -->
-                <article class="retro-frame policy-card" id="disclaimer">
-                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
-
+                <article class="policy-card surface-card" id="disclaimer">
                     <h2>2. Disclaimer</h2>
 
                     <p>
@@ -172,20 +165,15 @@
                 <!-- ─────────────────────────────────────────────────
                      SECTION 3: Privacy Policy (REQUIRED — never remove)
                      ───────────────────────────────────────────────── -->
-                <article class="retro-frame policy-card" id="privacy">
-                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
-
+                <article class="policy-card surface-card" id="privacy">
                     <h2>3. Privacy Policy</h2>
-                    <p style="font-family: 'Geist Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">
+                    <p class="policy-updated">
                         Last Updated: [Month YYYY]
                     </p>
 
                     <h3>TL;DR: What We Don't Do</h3>
                     <div class="highlight-box">
-                        <ul style="margin-bottom: 0;">
+                        <ul class="highlight-box-list">
                             <li class="prohibited">We don't collect [data type] data</li>
                             <li class="prohibited">We don't track usage or analytics</li>
                             <li class="prohibited">We don't send your data to external servers</li>
@@ -221,12 +209,7 @@
                 <!-- ──────────────────────────────────────────────────────────────────────────
                      SECTION 4: Regulatory Positioning (REQUIRED for medical CDS; OPTIONAL otherwise)
                      ──────────────────────────────────────────────────────────────────────────── -->
-                <article class="retro-frame policy-card" id="regulatory">
-                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
-
+                <article class="policy-card surface-card" id="regulatory">
                     <h2>4. Regulatory Positioning</h2>
                     <h3>Why This Is NOT a [Medical Device / Regulated Product]</h3>
                     <p>
@@ -252,12 +235,7 @@
             <!-- Sidebar Navigation Column -->
             <div class="content-sidebar">
                 <div class="sidebar-sticky">
-                    <div class="retro-frame outline-card">
-                        <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                        <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                        <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                        <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
-
+                    <div class="outline-card surface-card">
                         <h4>Document Outline</h4>
                         <ul class="outline-list">
                             <li><a href="#about-app" class="outline-link">1. About The App</a></li>
@@ -270,6 +248,9 @@
             </div>
 
         </div>
+
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -281,7 +262,6 @@
                         <svg viewBox="0 0 580 480" aria-hidden="true"><use href="#mai-logo"/></svg>
                         maicrest
                     </span>
-                    <p class="footer-tagline">Sharp tools. Fit right. Custom software engineered for clinical decision support and social benefit.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Product</h4>
@@ -296,17 +276,9 @@
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#disclaimer">Disclaimer</a></li>
-                    </ul>
-                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 MAICREST TECHBITS. All rights reserved. [APP NAME]&trade; is a trademark of MAICREST TECHBITS.</p>
-                <p>Geist &middot; #BC3A24</p>
             </div>
         </div>
     </footer>

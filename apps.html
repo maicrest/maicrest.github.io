@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="page-site">
 
     <!-- Brand mark (see docs/maicrest-brand-board.html) -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -30,8 +30,7 @@
         </symbol>
     </svg>
 
-    <!-- Floating Navigation Bar -->
-    <div class="container">
+    <div class="container site-nav-slot">
         <nav class="navbar" aria-label="Primary navigation">
             <div class="navbar-inner">
                 <a href="index.html" class="nav-brand" aria-label="MAICREST Home">
@@ -53,69 +52,49 @@
         </nav>
     </div>
 
-    <main id="main-content" class="container">
+    <main id="main-content">
 
-        <!-- Page Header -->
-        <header class="catalog-header">
-            <div class="eyebrow">MAICREST TECHBITS</div>
-            <h1 class="catalog-title">All Apps</h1>
-            <p class="catalog-description">
-                Every application built to a single standard — useful, reliable, nothing unnecessary.
-            </p>
-        </header>
-
-        <!-- Apps Catalog Grid -->
-        <section aria-label="Application catalog">
-            <div class="catalog-grid">
-
-                <!-- WarfarinWisely -->
-                <div class="retro-frame app-card">
-                    <span class="figure-corner figure-corner--tl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--tr" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--bl" aria-hidden="true"></span>
-                    <span class="figure-corner figure-corner--br" aria-hidden="true"></span>
-
-                    <div>
-                        <div class="app-card-header">
-                            <div class="app-brand-info">
-                                <img src="warfarin-icon-round.png" alt="WarfarinWisely app icon" class="app-icon">
-                                <div class="app-title-group">
-                                    <h2 class="app-card-name">WarfarinWisely</h2>
-                                    <div class="app-subtitle">CLINICAL DECISION SUPPORT</div>
-                                </div>
-                            </div>
-                            <div class="app-platform-badges">
-                                <span class="platform-badge">Android</span>
-                                <span class="platform-badge">iOS</span>
-                            </div>
-                        </div>
-                        <div class="app-card-body">
-                            <p class="app-description">
-                                INR-based weekly warfarin dose calculator built for healthcare professionals. Instantly calculates modified daily dosage schedules using validated regional guidelines to support clinician workflows.
-                            </p>
-                            <div class="app-tags">
-                                <span class="app-tag">Dose Calculator</span>
-                                <span class="app-tag">Dose Tracker</span>
-                                <span class="app-tag">MOH Malaysia</span>
-                                <span class="app-tag">ICSI</span>
-                                <span class="app-tag">Local-First</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="app-card-footer">
-                        <a href="warfarinwisely.html" class="app-link" aria-label="View WarfarinWisely info and privacy policy">
-                            View Info &amp; Privacy Policy &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Placeholder for future apps — remove when a real app is added -->
-                <!-- To add a new app: copy the card block above, update content,
-                     create <appname>.html using _app-template.html, and remove this comment. -->
-
+        <section class="hero-band hero-band--compact">
+            <div class="container">
+                <header class="catalog-header hero hero--centered">
+                    <div class="eyebrow">MAICREST TECHBITS</div>
+                    <h1 class="catalog-title">All Apps</h1>
+                    <p class="catalog-description">
+                        Every application built to a single standard — useful, reliable, nothing unnecessary.
+                    </p>
+                </header>
             </div>
         </section>
+
+        <div class="container catalog-section">
+            <section aria-label="Application catalog">
+                <div class="catalog-grid">
+
+                    <a href="warfarinwisely.html" class="catalog-card surface-card" aria-label="WarfarinWisely — clinical decision support">
+                        <img src="warfarin-icon-round.png" alt="" class="catalog-card-icon" width="72" height="72">
+                        <span class="catalog-card-sub">Clinical Decision Support</span>
+                        <h2 class="catalog-card-name">WarfarinWisely</h2>
+                        <p class="catalog-card-desc">
+                            INR-based weekly warfarin dose calculator built for healthcare professionals. Instantly calculates modified daily dosage schedules using validated regional guidelines.
+                        </p>
+                        <div class="catalog-card-meta">
+                            <span class="platform-badge">Android</span>
+                            <span class="platform-badge">iOS</span>
+                        </div>
+                        <div class="catalog-card-tags">
+                            <span class="app-tag">Dose Calculator</span>
+                            <span class="app-tag">Local-First</span>
+                        </div>
+                        <span class="catalog-card-link">View app &rarr;</span>
+                    </a>
+
+                    <!-- Placeholder for future apps — remove when a real app is added -->
+                    <!-- To add a new app: copy the card block above, update content,
+                         create <appname>.html using _app-template.html, and remove this comment. -->
+
+                </div>
+            </section>
+        </div>
 
     </main>
 
@@ -128,7 +107,6 @@
                         <svg viewBox="0 0 580 480" aria-hidden="true"><use href="#mai-logo"/></svg>
                         maicrest
                     </span>
-                    <p class="footer-tagline">Sharp tools. Fit right. Custom software engineered for clinical decision support and social benefit.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Product</h4>
@@ -144,17 +122,9 @@
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="warfarinwisely.html#privacy">Privacy Policy</a></li>
-                        <li><a href="warfarinwisely.html#disclaimer">Disclaimer</a></li>
-                    </ul>
-                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 MAICREST TECHBITS. All rights reserved.</p>
-                <p>Geist &middot; #BC3A24</p>
             </div>
         </div>
     </footer>

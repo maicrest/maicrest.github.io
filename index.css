@@ -70,30 +70,21 @@ a {
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Retro Frame Corners */
-.retro-frame {
+/* Surface cards (replaces legacy retro-frame) */
+.surface-card {
     position: relative;
     border: 1px solid var(--line);
     background-color: var(--surface);
-    border-radius: var(--radius-md);
-    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.figure-corner {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border: 1px solid var(--line-strong);
-    background-color: var(--bg);
-    z-index: 10;
-    pointer-events: none;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+a.surface-card:hover,
+.surface-card--interactive:hover {
+    border-color: var(--line-strong);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
 }
-
-.figure-corner--tl { top: -3px; left: -3px; }
-.figure-corner--tr { top: -3px; right: -3px; }
-.figure-corner--bl { bottom: -3px; left: -3px; }
-.figure-corner--br { bottom: -3px; right: -3px; }
 
 /* Container layout */
 .container {
@@ -234,8 +225,7 @@ a {
 }
 
 .nav-cta {
-    font-size: 0.85rem;
-    padding: 8px 18px;
+    margin-left: 4px;
 }
 
 /* Hero Section — full-bleed gradient band (Base44 reference) */
@@ -249,36 +239,65 @@ a {
     overflow: hidden;
 }
 
-/* Homepage: gradient from top, nav floats over hero */
-.page-home {
+/* Site-wide gradient background */
+.page-home,
+.page-site {
     background:
         radial-gradient(110% 120% at 50% 0%, rgba(188, 58, 36, 0.14) 0%, rgba(188, 58, 36, 0.05) 28%, rgba(250, 249, 246, 0) 62%),
         radial-gradient(80% 60% at 80% 15%, rgba(229, 142, 124, 0.12) 0%, transparent 55%),
         linear-gradient(180deg, #F2EDE4 0%, var(--bg) 48%);
 }
 
-.page-home .site-nav-slot {
+.site-nav-slot {
     position: relative;
     z-index: 100;
     padding-top: 20px;
+}
+
+.page-home .site-nav-slot,
+.page-site .site-nav-slot {
     margin-bottom: calc(-1 * (56px + 20px));
 }
 
-.page-home .site-nav-slot .navbar {
+.page-home .site-nav-slot .navbar,
+.page-site .site-nav-slot .navbar {
     margin-bottom: 0;
 }
 
-.page-home .site-nav-slot .navbar-inner {
+.page-home .site-nav-slot .navbar-inner,
+.page-site .site-nav-slot .navbar-inner {
     background-color: rgba(250, 249, 246, 0.72);
 }
 
-.page-home .hero-band {
+.page-home .hero-band,
+.page-site .hero-band--compact {
     background: transparent;
     padding-top: calc(20px + 56px + 20px);
 }
 
+.page-site .hero-band--compact {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 48px;
+}
+
 .page-home .hero-band .hero--centered {
     padding-top: 48px;
+}
+
+.hero-band--compact .hero--centered {
+    padding: 0;
+}
+
+.hero-band--compact .catalog-header,
+.hero-band--compact .page-header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.hero-band--compact .back-link-container {
+    margin-bottom: 28px;
+    text-align: left;
 }
 
 .hero {
@@ -384,6 +403,13 @@ a {
     box-shadow: 0 6px 20px rgba(188, 58, 36, 0.22);
 }
 
+.btn.nav-cta {
+    font-size: 0.85rem;
+    padding: 9px 20px;
+    border-radius: 9999px;
+    min-height: 36px;
+}
+
 .btn-secondary {
     background-color: transparent;
     border-color: var(--line-strong);
@@ -419,6 +445,7 @@ a {
 @media (prefers-reduced-motion: reduce) {
     .btn,
     .feature-tile,
+    .catalog-card,
     .nav-toggle-icon::before,
     .nav-toggle-icon::after {
         transition: none;
@@ -520,9 +547,9 @@ a {
 
 /* Catalog page header */
 .catalog-header {
-    padding: 48px 0 40px;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 48px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
 }
 
 .catalog-title {
@@ -535,20 +562,112 @@ a {
     font-size: 1.125rem;
     color: var(--text-muted);
     max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Catalog grid — full .app-card detail cards (apps.html only) */
+/* Catalog page (apps.html) */
+.catalog-section {
+    padding: 48px 0 80px;
+}
+
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 24px;
-    padding-bottom: 80px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
-/* App card name used as h2 in catalog */
-.app-card-name {
-    font-size: 1.5rem;
-    margin-bottom: 4px;
+.catalog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 36px 32px;
+    height: 100%;
+    text-decoration: none;
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.catalog-card:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--line-strong);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px);
+}
+
+.catalog-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.catalog-card-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    object-fit: cover;
+}
+
+.catalog-card-sub {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.catalog-card-name {
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.catalog-card-desc {
+    font-size: 0.9875rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.catalog-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.catalog-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.catalog-card-link {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: 8px;
+    transition: color 0.2s ease;
+}
+
+.catalog-card:hover .catalog-card-link {
+    color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .catalog-card {
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .catalog-card:hover {
+        transform: none;
+    }
 }
 
 /* Contact section standalone card */
@@ -586,8 +705,12 @@ a {
 
     .catalog-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
-        min-width: 0;
+        gap: 20px;
+        max-width: none;
+    }
+
+    .catalog-card {
+        padding: 28px 24px;
     }
 
     .preview-cta {
@@ -597,49 +720,6 @@ a {
     .preview-cta .btn {
         width: 100%;
         justify-content: center;
-    }
-
-    .app-card {
-        padding: 24px 20px;
-        min-width: 0;
-    }
-
-    .app-card-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .app-brand-info {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .app-title-group {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        min-width: 0;
-    }
-
-    .app-card-name {
-        font-size: 1.25rem;
-        overflow-wrap: anywhere;
-    }
-
-    .app-subtitle {
-        font-size: 0.7rem;
-        letter-spacing: 0.04em;
-    }
-
-    .app-platform-badges {
-        width: 100%;
-        justify-content: flex-start;
-        margin-top: 2px;
-    }
-
-    .app-description {
-        font-size: 1rem;
     }
 }
 
@@ -682,37 +762,6 @@ a {
     margin-bottom: 16px;
 }
 
-/* Principles strip (Base44 logo-wall slot) */
-.principles-strip {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 14px 36px;
-    padding: 28px 0 4px;
-}
-
-.principle-item {
-    font-family: 'Geist Mono', monospace;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.principle-item::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    flex-shrink: 0;
-}
-
 /* Feature split (text + framed product visual) */
 .feature-split {
     display: grid;
@@ -738,13 +787,10 @@ a {
     max-width: 460px;
 }
 
-.feature-frame {
-    padding: 36px;
+.feature-visual {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--surface);
-    min-height: 320px;
 }
 
 .feature-tile {
@@ -752,23 +798,25 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    padding: 40px 32px;
+    padding: 48px 40px;
     width: 100%;
-    max-width: 320px;
+    max-width: 360px;
     text-align: center;
     text-decoration: none;
     color: var(--text);
-    background-color: var(--bg);
+    background-color: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
     cursor: pointer;
-    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 .feature-tile:hover {
+    background-color: var(--surface-hover);
     border-color: var(--line-strong);
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px);
 }
 
 .feature-tile:focus-visible {
@@ -893,7 +941,7 @@ a {
 }
 
 
-/* App Retro Card */
+/* App card */
 .app-card {
     padding: 40px;
     height: 100%;
@@ -1054,10 +1102,15 @@ a {
 }
 
 .page-header {
-    margin-bottom: 48px;
     text-align: center;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 40px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.page-meta {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .page-brand {
@@ -1092,6 +1145,7 @@ a {
     grid-template-columns: 1.4fr 0.6fr;
     gap: 40px;
     align-items: start;
+    padding-bottom: 80px;
 }
 
 @media (max-width: 900px) {
@@ -1103,6 +1157,33 @@ a {
 .policy-card {
     padding: 36px;
     margin-bottom: 32px;
+}
+
+.policy-updated {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.highlight-box--warning {
+    border-left-color: #EF4444;
+}
+
+.highlight-box-title {
+    color: var(--text);
+    font-weight: 600;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.highlight-box-text {
+    font-size: 0.95rem;
+}
+
+.highlight-box-list {
+    margin-bottom: 0;
 }
 
 .policy-card h2 {
@@ -1245,7 +1326,7 @@ footer a {
 
 .site-footer-grid {
     display: grid;
-    grid-template-columns: 1.6fr repeat(3, 1fr);
+    grid-template-columns: 1.6fr repeat(2, 1fr);
     gap: 40px;
     padding-bottom: 48px;
     border-bottom: 1px solid var(--line);
@@ -1270,12 +1351,6 @@ footer a {
     width: 22px;
     height: auto;
     color: var(--accent);
-}
-
-.footer-tagline {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--text-muted);
 }
 
 .footer-col h4 {
@@ -1314,9 +1389,9 @@ footer a {
 .footer-bottom {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: center;
     padding-top: 28px;
+    text-align: center;
     font-family: 'Geist Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -1424,16 +1499,9 @@ footer a {
         margin-top: 64px;
     }
 
-    .feature-frame {
-        padding: 24px;
-        min-height: 0;
-    }
-
-    .principles-strip {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px 16px;
-        justify-items: start;
+    .feature-tile {
+        max-width: 100%;
+        padding: 40px 28px;
     }
 
     .site-footer-grid {
@@ -1442,8 +1510,6 @@ footer a {
     }
 
     .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        align-items: center;
     }
 }
