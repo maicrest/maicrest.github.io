@@ -184,9 +184,16 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
     height: 24px;
-    color: var(--accent);
+    width: auto;
+    flex-shrink: 0;
+}
+
+.nav-brand-logo img {
+    display: block;
+    height: 24px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {

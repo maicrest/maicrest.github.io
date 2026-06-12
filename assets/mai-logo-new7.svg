@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 580 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-2660,-3060)">
+        <g id="Artboard1" transform="matrix(64.3647,0,0,586.143,-152695,-1.1887e+06)">
+            <rect x="2372.34" y="2028" width="75.657" height="7" style="fill:none;"/>
+            <g id="Layer1">
+            </g>
+            <g id="Layer11" serif:id="Layer1">
+            </g>
+            <g id="Layer2">
+            </g>
+            <g transform="matrix(0.0155365,0,0,0.00170607,2383.22,2028.85)">
+                <g transform="matrix(1,0,0,1.09091,1.27329e-11,-363.636)">
+                    <rect x="1960" y="2680" width="580" height="440" style="fill:none;"/>
+                </g>
+                <path d="M2400,2900L2400,2700L2500,2700L2500,3000L2400,2900Z" style="fill:rgb(188,58,36);"/>
+                <path d="M2400,2900L2400,2700L2500,2700L2500,3000L2400,2900ZM2402,2899.17L2498,2995.17L2498,2702L2402,2702L2402,2899.17Z" style="fill:rgb(188,58,36);"/>
+                <path d="M2100,3000L2000,2900L2000,2810L2100,2700L2100,2900L2200,2900L2100,3000Z" style="fill:rgb(188,58,36);"/>
+                <path d="M2100,3000L2000,2900L2000,2810L2100,2700L2100,2900L2200,2900L2100,3000ZM2100,2997.17L2195.17,2902L2100,2902C2098.89,2902 2098,2901.11 2098,2900L2098,2705.17L2002,2810.77L2002,2899.17L2100,2997.17Z" style="fill:rgb(188,58,36);"/>
+                <g transform="matrix(1,0,0,1,-700,-500)">
+                    <path d="M2900,3200L2800,3200L2900,3100L3000,3200L3000,3400L3100,3400L3000,3500L2900,3400L2900,3200Z" style="fill:rgb(188,58,36);"/>
+                    <path d="M2900,3200L2800,3200L2900,3100L3000,3200L3000,3400L3100,3400L3000,3500L2900,3400L2900,3200ZM2902,3200L2902,3399.17L3000,3497.17L3095.17,3402L3000,3402C2998.89,3402 2998,3401.11 2998,3400L2998,3200.83L2900,3102.83L2804.83,3198L2900,3198C2901.11,3198 2902,3198.89 2902,3200Z" style="fill:rgb(188,58,36);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-700,-500)">
+                    <path d="M2700,3100L2800,3200L2700,3200L2700,3100Z" style="fill:rgb(188,58,36);stroke:rgb(188,58,36);stroke-width:2px;"/>
+                </g>
+                <path d="M2400,2600C2400,2600 2500,2700 2500,2700L2300,2700L2400,2600Z" style="fill:rgb(188,58,36);"/>
+                <path d="M2400.59,2600.59L2500,2700L2300,2700L2399.41,2600.59L2400,2602L2400.59,2600.59ZM2400,2602.83L2304.83,2698L2495.17,2698L2400,2602.83Z" style="fill:rgb(188,58,36);"/>
+            </g>
+        </g>
+    </g>
+</svg>
