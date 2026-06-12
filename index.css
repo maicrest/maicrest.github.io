@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
-    color-scheme: light dark;
+    color-scheme: light;
 }
 
 /* Light Theme Variables */
@@ -27,26 +27,6 @@
 }
 
 /* Dark Theme Variables */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0A0A09;
-        --surface: #141413;
-        --surface-hover: #1D1D1B;
-        --surface-accent: #262624;
-        --text: #FAF9F6;
-        --text-muted: #9E9991;
-        --text-inverse: #0A0A09;
-        --line: rgba(250, 249, 246, 0.12);
-        --line-strong: rgba(250, 249, 246, 0.25);
-        --accent: #FF6B52;
-        --accent-bg: rgba(255, 107, 82, 0.1);
-        --button-bg: #FAF9F6;
-        --button-text: #0A0A09;
-        --shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-}
-
 [data-theme="dark"] {
     --bg: #0A0A09;
     --surface: #141413;
@@ -148,7 +128,7 @@ a {
     top: 20px;
     z-index: 100;
     margin-bottom: 60px;
-    padding: 0 8px;
+    padding: 8px 8px 0;
 }
 
 .navbar-inner {
