@@ -1,3 +1,5 @@
 # AI session context — never commit
 .ai/
 docs/
+.DS_Store
+**/.DS_Store
